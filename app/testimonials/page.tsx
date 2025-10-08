@@ -10,19 +10,19 @@ const testimonials = [
     img: '/woman.jpeg',
     name: 'Anita Kahenya',
     title: 'Technical Mentor, Moringa School',
-    text: 'I’m a frontend developer skilled in React.js, Next.js, and Tailwind CSS, creating fast, responsive, and visually appealing interfaces with clean code, smooth user experiences, and seamless API integrations.'
+    text: 'Felix is a dedicated and talented developer. His attention to detail and ability to solve complex problems make him a valuable asset to any team. He consistently delivers high-quality work and is always eager to learn new technologies.'
   },
   {
     img: '/mother.jpeg',
-    name: 'Anita Kahenya',
-    title: 'Technical Mentor, Moringa School',
-    text: 'I’m a frontend developer skilled in React.js, Next.js, and Tailwind CSS, creating fast, responsive, and visually appealing interfaces with clean code, smooth user experiences, and seamless API integrations.'
+    name: 'Titus',
+    title: 'Project Manager, Moringa School',
+    text: 'Working with Felix has been a pleasure. He communicates effectively, meets deadlines, and brings creative solutions to the table. His frontend skills are top-notch, and he adapts quickly to project requirements.'
   },
   {
     img: '/father.jpeg',
-    name: 'Anita Kahenya',
-    title: 'Technical Mentor, Moringa School',
-    text: 'I’m a frontend developer skilled in React.js, Next.js, and Tailwind CSS, creating fast, responsive, and visually appealing interfaces with clean code, smooth user experiences, and seamless API integrations.'
+    name: 'John ',
+    title: 'Lead Engineer, DevWorks',
+    text: 'Felix demonstrates strong technical skills and a passion for coding. He is reliable, proactive, and always willing to help others. His contributions have greatly improved our project outcomes.'
   }
 ];
 
