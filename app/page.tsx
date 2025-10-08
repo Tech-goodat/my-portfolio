@@ -1,38 +1,77 @@
-import React from 'react'
+"use client"
+import React from 'react';
 import { FaInstagram } from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
 import { FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+
+
+const containerVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
+      duration: 0.7
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7
+    }
+  }
+};
 
 const Home = () => {
   return (
-    <div className='flex lg:px-[200px] flex-col lg:grid lg:grid-cols-2 lg:mt-[120px]'>
-      <div className='flex w-full  gap-3 items-center justify-center flex-col'>
-        <h2 className='text-[18px] gap-2 flex w-full'>Hello, <span className='text-emerald-500'>I&apos;m</span></h2>
-        <h2 className='text-4xl font-bold text-emerald-500 gap-2 flex w-full'>Felix Kiprotich</h2>
-        <h2 className='text-xl font-  gap-2 flex w-full'>Seasoned Software <span className='text-emerald-500'>&</span> AI Engineer</h2>
-        <p className='flex text-[12px]'>I&apos;m a Fullstack Software and AI Engineer passionate about building intelligent, user-focused web and mobile applications. I combine strong frontend and backend expertise with creativity to deliver innovative, scalable solutions.</p>
-        <div className='flex mt-5 w-full items-center'>
-          <button className='bg-emerald-600 w-[160px] cursor-pointer  rounded-md p-1.5  items-center justify-center text-white flex text-[13px] mt-3'>Download CV</button>
-         
-        </div>
-         <div className='flex w-full items-center text-[15px] mt-10 gap-3'>
-            <p>Check out my </p>
-            <p>-</p>
-            <div className='items-center p-1 bg-emerald-700 cursor-pointer border rounded-full border-emerald-400' ><FaInstagram size={22}/></div>
-            <div className='items-center p-1 bg-emerald-700 cursor-pointer border rounded-full border-emerald-400' ><CiLinkedin size={22}/></div>
-            <div className='items-center p-1 bg-emerald-700 cursor-pointer border rounded-full border-emerald-400' ><FaGithub size={22}/></div>
-            <div className='items-center p-1 bg-emerald-700 cursor-pointer border rounded-full border-emerald-400' ><FaXTwitter size={22}/></div>
-
-            
-          </div>
-      </div>
-      <div className='flex w-full items-center justify-center flex-col'>
-        <Image src="/jerry.png" width={400} height={400} alt="jerry"/>
-      </div>
-    </div>
-  )
+    <motion.div
+      className="flex flex-col min-h-screen justify-center items-center px-4 py-8 lg:grid lg:grid-cols-2 lg:px-[120px] lg:mt-[10px]"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.div className="flex w-full gap-3 items-center justify-center flex-col max-w-xl mx-auto lg:items-start" variants={itemVariants}>
+        <motion.h2 className="text-[18px] gap-2 flex w-full" variants={itemVariants}>
+          Hello, <span className="text-emerald-500">I&apos;m</span>
+        </motion.h2>
+        <motion.h2 className="text-4xl font-bold text-emerald-500 gap-2 flex w-full" variants={itemVariants}>
+          Felix Kiprotich
+        </motion.h2>
+        <motion.h2 className="text-xl gap-2 flex w-full" variants={itemVariants}>
+          Seasoned Software <span className="text-emerald-500">&</span> AI Engineer
+        </motion.h2>
+        <motion.p className="flex text-[14px] md:text-[15px] mt-2  lg:text-left" variants={itemVariants}>
+          I&apos;m a Fullstack Software and AI Engineer passionate about building intelligent, user-focused web and mobile applications. I combine strong frontend and backend expertise with creativity to deliver innovative, scalable solutions.
+        </motion.p>
+        <motion.div className="flex mt-5 w-full items-center justify-center lg:justify-start" variants={itemVariants}>
+          <button className="bg-emerald-600 w-[400px] cursor-pointer rounded-md p-1.5 items-center justify-center text-white flex text-[13px] mt-3 hover:bg-emerald-700 transition-colors">Download CV</button>
+        </motion.div>
+        <motion.div className="flex w-full flex-wrap items-center text-[15px] mt-8 gap-3 justify-center lg:justify-start" variants={itemVariants}>
+          <p>Check out my</p>
+          <span>-</span>
+          <div className="items-center p-1 bg-emerald-700 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 transition-colors" ><FaInstagram size={22}/></div>
+          <div className="items-center p-1 bg-emerald-700 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 transition-colors" ><CiLinkedin size={22}/></div>
+          <div className="items-center p-1 bg-emerald-700 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 transition-colors" ><FaGithub size={22}/></div>
+          <div className="items-center p-1 bg-emerald-700 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 transition-colors" ><FaXTwitter size={22}/></div>
+        </motion.div>
+      </motion.div>
+      <motion.div className="flex w-full items-center justify-center flex-col mt-10 lg:mt-0" variants={itemVariants}>
+        <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.8, delay: 0.5, type: 'spring' }}>
+          <Image src="/jerry.png" width={320} height={320} alt="jerry" className="rounded-full shadow-lg w-[220px] h-[220px] md:w-[320px] md:h-[320px] object-cover" />
+        </motion.div>
+      </motion.div>
+    </motion.div>
+  );
 }
 
 export default Home

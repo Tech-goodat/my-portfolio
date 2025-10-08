@@ -36,9 +36,9 @@ const Footer = () => {
           </div>
         </div>
         {/* Important Links Section */}
-        <div className="flex flex-col gap-2 items-center">
+        <div className="flex flex-col w-full gap-2 items-center">
           <span className="font-semibold text-lg text-emerald-400 mb-1">Important Links</span>
-          <div className="flex flex-col gap-3 items-center">
+          <div className="flex w-full flex-col gap-3 items-center">
             <Link href="/" className="flex items-center gap-2 text-[14px] hover:text-emerald-500 cursor-pointer transition-colors">
               <FaHome /> Home
             </Link>
