@@ -55,31 +55,31 @@ const Home = () => {
           <a
             href="/resume.pdf"
             download
-            className="bg-emerald-300 w-[400px] cursor-pointer rounded-md p-1.5 items-center justify-center text-gray-900 flex text-[13px] mt-3 hover:bg-emerald-500 hover:text-gray-900 transition-colors"
+            className="bg-emerald-500 w-[400px] cursor-pointer rounded-md p-1.5 items-center justify-center text-gray-900 flex text-[13px] mt-3 hover:bg-emerald-600 hover:text-gray-900 transition-colors"
           >
             Download CV
           </a>
         </motion.div>
         <motion.div className="flex w-full flex-wrap items-center text-[15px] mt-8 gap-3 justify-center lg:justify-start" variants={itemVariants}>
-          <p>Check out my</p>
-          <span>-</span>
+          <p className="">Check out my</p>
+          <span className="text-gray-800">-</span>
           <a
             href="https://www.linkedin.com/in/kiprotich-felix-b87a11228/"
             target="_blank"
             rel="noopener noreferrer"
-            className="items-center p-1 bg-emerald-300 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 text-gray-900 transition-colors"
+            className="items-center p-1 bg-emerald-300 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 text-gray-800 transition-colors"
             aria-label="LinkedIn"
           >
-            <CiLinkedin size={22} />
+            <CiLinkedin size={22} className="text-gray-800" />
           </a>
           <a
             href="https://github.com/Tech-goodat"
             target="_blank"
             rel="noopener noreferrer"
-            className="items-center p-1 bg-emerald-300 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 text-gray-900 transition-colors"
+            className="items-center p-1 bg-emerald-300 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 text-gray-800 transition-colors"
             aria-label="GitHub"
           >
-            <FaGithub size={22} />
+            <FaGithub size={22} className="text-gray-800" />
           </a>
         </motion.div>
       </motion.div>

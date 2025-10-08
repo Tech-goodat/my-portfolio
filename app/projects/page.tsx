@@ -61,13 +61,13 @@ const Projects = () => {
       animate="visible"
     >
       <motion.h1
-        className="text-3xl md:text-4xl font-bold mb-2 text-emerald-400"
+        className="text-3xl flex text-center md:text-4xl font-bold  mb-2 text-emerald-400"
         variants={itemVariants}
       >
         My Projects
       </motion.h1>
       <motion.p
-        className="text-gray-400 mb-10 max-w-2xl text-center"
+        className="text-gray-400 flex lg:w-full text-center  mb-10 max-w-2xl"
         variants={itemVariants}
       >
         Explore some of the projects I&apos;ve worked on. Each project showcases my skills, creativity, and passion for building impactful solutions.
@@ -88,7 +88,7 @@ const Projects = () => {
               />
             </div>
             <div className="flex flex-col flex-1 p-6">
-              <h2 className="text-xl font-semibold mb-2 text-emerald-500">{project.title}</h2>
+              <h2 className="text-xl font-semibold mb-2 text-emerald-300">{project.title}</h2>
               <p className="text-gray-300 mb-4 text-[15px] flex-1">{project.description}</p>
               <div className="flex gap-4 mt-auto">
                 <a

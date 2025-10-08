@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaEnvelope, FaPhoneAlt, FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaEnvelope, FaPhoneAlt, FaWhatsapp, FaLinkedin, FaGithub, FaRegCopy } from "react-icons/fa";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -26,13 +26,24 @@ const itemVariants = {
 };
 
 const EMAIL_TO = "felixkiprotich2000@gmail.com";
+const PHONE = "+254 758364336";
+const WHATSAPP = "+254 758364336";
+const LINKEDIN = "https://linkedin.com/in/kiprotich-felix-b87a11228/";
+const GITHUB = "https://github.com/Tech-goodat";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [sending, setSending] = useState(false);
+  const [copied, setCopied] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleCopy = (value: string, label: string) => {
+    navigator.clipboard.writeText(value);
+    setCopied(label);
+    setTimeout(() => setCopied(null), 1500);
   };
 
   // Use mailto for simple client-side email sending
@@ -55,7 +66,7 @@ const Contact = () => {
       animate="visible"
     >
       <motion.div
-        className="w-full max-w-4xl dark:bg-neutral-800 rounded-xl shadow-xl p-8 flex flex-col md:flex-row gap-12"
+        className="w-full max-w-4xl bg-neutral-800 rounded-xl shadow-xl p-8 flex flex-col md:flex-row gap-12"
         variants={itemVariants}
       >
         {/* Left Side: Info */}
@@ -70,7 +81,7 @@ const Contact = () => {
             Get in Touch
           </motion.h1>
           <motion.p
-            className="text-gray-500 dark:text-gray-300 mb-6"
+            className="text-gray-500 mb-6"
             variants={itemVariants}
           >
             I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Drop me a message and I&apos;ll get back to you soon!
@@ -79,7 +90,8 @@ const Contact = () => {
             className="flex flex-col gap-5"
             variants={itemVariants}
           >
-            <div className="flex items-center gap-3">
+            {/* Email */}
+            <div className="flex items-center gap-3 group">
               <FaEnvelope className="text-emerald-300" size={20} />
               <a
                 href={`mailto:${EMAIL_TO}`}
@@ -88,33 +100,72 @@ const Contact = () => {
               >
                 {EMAIL_TO}
               </a>
+              <button
+                onClick={() => handleCopy(EMAIL_TO, "email")}
+                className="ml-1 text-gray-400 hover:text-emerald-400 transition-colors"
+                title="Copy email"
+                type="button"
+                tabIndex={0}
+              >
+                <FaRegCopy size={16} />
+              </button>
+              {copied === "email" && (
+                <span className="ml-2 text-xs text-emerald-400">Copied!</span>
+              )}
             </div>
-            <div className="flex items-center gap-3">
+            {/* Phone */}
+            <div className="flex items-center gap-3 group">
               <FaPhoneAlt className="text-emerald-300" size={20} />
               <a
-                href="tel:+254758364336"
+                href={`tel:${PHONE.replace(/\s/g, "")}`}
                 className="hover:text-emerald-500 transition-colors text-sm md:text-base cursor-pointer"
                 style={{ textDecoration: "none" }}
               >
-                +254 758364336
+                {PHONE}
               </a>
+              <button
+                onClick={() => handleCopy(PHONE, "phone")}
+                className="ml-1 text-gray-400 hover:text-emerald-400 transition-colors"
+                title="Copy phone"
+                type="button"
+                tabIndex={0}
+              >
+                <FaRegCopy size={16} />
+              </button>
+              {copied === "phone" && (
+                <span className="ml-2 text-xs text-emerald-400">Copied!</span>
+              )}
             </div>
-            <div className="flex items-center gap-3">
+            {/* WhatsApp */}
+            <div className="flex items-center gap-3 group">
               <FaWhatsapp className="text-emerald-300" size={20} />
               <a
-                href="https://wa.me/254758364336"
+                href={`https://wa.me/${WHATSAPP.replace(/\D/g, "")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-emerald-500 transition-colors text-sm md:text-base cursor-pointer"
                 style={{ textDecoration: "none" }}
               >
-                +254 758364336
+                {WHATSAPP}
               </a>
+              <button
+                onClick={() => handleCopy(WHATSAPP, "whatsapp")}
+                className="ml-1 text-gray-400 hover:text-emerald-400 transition-colors"
+                title="Copy WhatsApp"
+                type="button"
+                tabIndex={0}
+              >
+               
+              </button>
+              {copied === "whatsapp" && (
+                <span className="ml-2 text-xs text-emerald-400">Copied!</span>
+              )}
             </div>
-            <div className="flex items-center gap-3">
+            {/* LinkedIn */}
+            <div className="flex items-center gap-3 group">
               <FaLinkedin className="text-emerald-300" size={20} />
               <a
-                href="https://linkedin.com/in/kiprotich-felix-b87a11228/"
+                href={LINKEDIN}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-emerald-500 transition-colors text-sm md:text-base cursor-pointer"
@@ -122,11 +173,24 @@ const Contact = () => {
               >
                 linkedin.com/in/kiprotich-felix-b87a11228
               </a>
+              <button
+                onClick={() => handleCopy(LINKEDIN, "linkedin")}
+                className="ml-1 text-gray-400 hover:text-emerald-400 transition-colors"
+                title="Copy LinkedIn"
+                type="button"
+                tabIndex={0}
+              >
+               
+              </button>
+              {copied === "linkedin" && (
+                <span className="ml-2 text-xs text-emerald-400">Copied!</span>
+              )}
             </div>
-            <div className="flex items-center gap-3">
+            {/* GitHub */}
+            <div className="flex items-center gap-3 group">
               <FaGithub className="text-emerald-500" size={20} />
               <a
-                href="https://github.com/Tech-goodat"
+                href={GITHUB}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-emerald-500 transition-colors text-sm md:text-base cursor-pointer"
@@ -134,6 +198,18 @@ const Contact = () => {
               >
                 github.com/Tech-goodat
               </a>
+              <button
+                onClick={() => handleCopy(GITHUB, "github")}
+                className="ml-1 text-gray-400 hover:text-emerald-400 transition-colors"
+                title="Copy GitHub"
+                type="button"
+                tabIndex={0}
+              >
+                
+              </button>
+              {copied === "github" && (
+                <span className="ml-2 text-xs text-emerald-400">Copied!</span>
+              )}
             </div>
           </motion.div>
         </motion.div>
@@ -147,7 +223,7 @@ const Contact = () => {
             type="text"
             name="name"
             placeholder="Your Name"
-            className="rounded-md border border-gray-600 dark:border-gray-600 bg-transparent px-4 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-400 transition"
+            className="rounded-md border border-gray-600 bg-transparent px-4 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-400 transition"
             required
             value={form.name}
             onChange={handleChange}
@@ -156,7 +232,7 @@ const Contact = () => {
             type="email"
             name="email"
             placeholder="Your Email"
-            className="rounded-md border border-gray-600 dark:border-gray-600 bg-transparent px-4 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-400 transition"
+            className="rounded-md border border-gray-600 bg-transparent px-4 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-400 transition"
             required
             value={form.email}
             onChange={handleChange}
@@ -165,7 +241,7 @@ const Contact = () => {
             name="message"
             placeholder="Your Message"
             rows={4}
-            className="rounded-md border border-gray-600 dark:border-gray-600 bg-transparent px-4 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-400 transition"
+            className="rounded-md border border-gray-600 bg-transparent px-4 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-400 transition"
             required
             value={form.message}
             onChange={handleChange}
