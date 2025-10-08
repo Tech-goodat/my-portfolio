@@ -1,9 +1,7 @@
 "use client"
 import React from 'react';
-import { FaInstagram } from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
 import { FaGithub } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
@@ -61,10 +59,24 @@ const Home = () => {
         <motion.div className="flex w-full flex-wrap items-center text-[15px] mt-8 gap-3 justify-center lg:justify-start" variants={itemVariants}>
           <p>Check out my</p>
           <span>-</span>
-          <div className="items-center p-1 bg-emerald-300 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 text-gray-900 transition-colors" ><FaInstagram size={22}/></div>
-          <div className="items-center p-1 bg-emerald-300 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 text-gray-900 transition-colors" ><CiLinkedin size={22}/></div>
-          <div className="items-center p-1 bg-emerald-300 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 text-gray-900 transition-colors" ><FaGithub size={22}/></div>
-          <div className="items-center p-1 bg-emerald-300 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 text-gray-900 transition-colors" ><FaXTwitter size={22}/></div>
+          <a
+            href="https://www.linkedin.com/in/kiprotich-felix-b87a11228/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="items-center p-1 bg-emerald-300 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 text-gray-900 transition-colors"
+            aria-label="LinkedIn"
+          >
+            <CiLinkedin size={22} />
+          </a>
+          <a
+            href="https://github.com/Tech-goodat"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="items-center p-1 bg-emerald-300 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 text-gray-900 transition-colors"
+            aria-label="GitHub"
+          >
+            <FaGithub size={22} />
+          </a>
         </motion.div>
       </motion.div>
       <motion.div className="flex w-full items-center justify-center flex-col mt-10 lg:mt-0" variants={itemVariants}>
