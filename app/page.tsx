@@ -54,15 +54,17 @@ const Home = () => {
           I&apos;m a Fullstack Software and AI Engineer passionate about building intelligent, user-focused web and mobile applications. I combine strong frontend and backend expertise with creativity to deliver innovative, scalable solutions.
         </motion.p>
         <motion.div className="flex mt-5 w-full items-center justify-center lg:justify-start" variants={itemVariants}>
-          <button className="bg-emerald-300 w-[400px] cursor-pointer rounded-md p-1.5 items-center justify-center text-gray-400 flex text-[13px] mt-3 hover:bg-emerald-500 transition-colors">Download CV</button>
+          <button className="bg-emerald-300 w-[400px] cursor-pointer rounded-md p-1.5 items-center justify-center text-gray-900 flex text-[13px] mt-3 hover:bg-emerald-500 hover:text-gray-900">
+            Download CV
+          </button>
         </motion.div>
         <motion.div className="flex w-full flex-wrap items-center text-[15px] mt-8 gap-3 justify-center lg:justify-start" variants={itemVariants}>
           <p>Check out my</p>
           <span>-</span>
-          <div className="items-center p-1 bg-emerald-300 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 transition-colors" ><FaInstagram size={22}/></div>
-          <div className="items-center p-1 bg-emerald-300 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 transition-colors" ><CiLinkedin size={22}/></div>
-          <div className="items-center p-1 bg-emerald-300 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 transition-colors" ><FaGithub size={22}/></div>
-          <div className="items-center p-1 bg-emerald-300 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 transition-colors" ><FaXTwitter size={22}/></div>
+          <div className="items-center p-1 bg-emerald-300 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 text-gray-900 transition-colors" ><FaInstagram size={22}/></div>
+          <div className="items-center p-1 bg-emerald-300 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 text-gray-900 transition-colors" ><CiLinkedin size={22}/></div>
+          <div className="items-center p-1 bg-emerald-300 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 text-gray-900 transition-colors" ><FaGithub size={22}/></div>
+          <div className="items-center p-1 bg-emerald-300 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 text-gray-900 transition-colors" ><FaXTwitter size={22}/></div>
         </motion.div>
       </motion.div>
       <motion.div className="flex w-full items-center justify-center flex-col mt-10 lg:mt-0" variants={itemVariants}>
