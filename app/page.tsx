@@ -42,27 +42,27 @@ const Home = () => {
     >
       <motion.div className="flex w-full gap-3 items-center justify-center flex-col max-w-xl mx-auto lg:items-start" variants={itemVariants}>
         <motion.h2 className="text-[18px] gap-2 flex w-full" variants={itemVariants}>
-          Hello, <span className="text-emerald-500">I&apos;m</span>
+          Hello, <span className="text-emerald-300">I&apos;m</span>
         </motion.h2>
-        <motion.h2 className="text-4xl font-bold text-emerald-500 gap-2 flex w-full" variants={itemVariants}>
+        <motion.h2 className="text-4xl font-bold text-emerald-300 gap-2 flex w-full" variants={itemVariants}>
           Felix Kiprotich
         </motion.h2>
         <motion.h2 className="text-xl gap-2 flex w-full" variants={itemVariants}>
-          Seasoned Software <span className="text-emerald-500">&</span> AI Engineer
+          Seasoned Software <span className="text-emerald-300">&</span> AI Engineer
         </motion.h2>
         <motion.p className="flex text-[14px] md:text-[15px] mt-2  lg:text-left" variants={itemVariants}>
           I&apos;m a Fullstack Software and AI Engineer passionate about building intelligent, user-focused web and mobile applications. I combine strong frontend and backend expertise with creativity to deliver innovative, scalable solutions.
         </motion.p>
         <motion.div className="flex mt-5 w-full items-center justify-center lg:justify-start" variants={itemVariants}>
-          <button className="bg-emerald-600 w-[400px] cursor-pointer rounded-md p-1.5 items-center justify-center text-white flex text-[13px] mt-3 hover:bg-emerald-700 transition-colors">Download CV</button>
+          <button className="bg-emerald-300 w-[400px] cursor-pointer rounded-md p-1.5 items-center justify-center text-gray-400 flex text-[13px] mt-3 hover:bg-emerald-500 transition-colors">Download CV</button>
         </motion.div>
         <motion.div className="flex w-full flex-wrap items-center text-[15px] mt-8 gap-3 justify-center lg:justify-start" variants={itemVariants}>
           <p>Check out my</p>
           <span>-</span>
-          <div className="items-center p-1 bg-emerald-700 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 transition-colors" ><FaInstagram size={22}/></div>
-          <div className="items-center p-1 bg-emerald-700 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 transition-colors" ><CiLinkedin size={22}/></div>
-          <div className="items-center p-1 bg-emerald-700 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 transition-colors" ><FaGithub size={22}/></div>
-          <div className="items-center p-1 bg-emerald-700 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 transition-colors" ><FaXTwitter size={22}/></div>
+          <div className="items-center p-1 bg-emerald-300 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 transition-colors" ><FaInstagram size={22}/></div>
+          <div className="items-center p-1 bg-emerald-300 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 transition-colors" ><CiLinkedin size={22}/></div>
+          <div className="items-center p-1 bg-emerald-300 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 transition-colors" ><FaGithub size={22}/></div>
+          <div className="items-center p-1 bg-emerald-300 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 transition-colors" ><FaXTwitter size={22}/></div>
         </motion.div>
       </motion.div>
       <motion.div className="flex w-full items-center justify-center flex-col mt-10 lg:mt-0" variants={itemVariants}>
