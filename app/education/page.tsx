@@ -57,7 +57,7 @@ const Education = () => {
                 <a
                   href={edu.cert}
                   download
-                  className='bg-emerald-500 w-full cursor-pointer rounded-md p-1.5 items-center justify-center text-white flex text-[13px] mt-3 hover:bg-emerald-600 transition-colors'
+                  className='bg-emerald-500 w-full cursor-pointer rounded-md p-1.5 items-center justify-center text-white flex text-[13px] mt-12 hover:bg-emerald-600 transition-colors'
                 >
                   {edu.certLabel}
                 </a>

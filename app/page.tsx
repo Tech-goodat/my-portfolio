@@ -52,9 +52,13 @@ const Home = () => {
           I&apos;m a Fullstack Software and AI Engineer passionate about building intelligent, user-focused web and mobile applications. I combine strong frontend and backend expertise with creativity to deliver innovative, scalable solutions.
         </motion.p>
         <motion.div className="flex mt-5 w-full items-center justify-center lg:justify-start" variants={itemVariants}>
-          <button className="bg-emerald-300 w-[400px] cursor-pointer rounded-md p-1.5 items-center justify-center text-gray-900 flex text-[13px] mt-3 hover:bg-emerald-500 hover:text-gray-900">
+          <a
+            href="/resume.pdf"
+            download
+            className="bg-emerald-300 w-[400px] cursor-pointer rounded-md p-1.5 items-center justify-center text-gray-900 flex text-[13px] mt-3 hover:bg-emerald-500 hover:text-gray-900 transition-colors"
+          >
             Download CV
-          </button>
+          </a>
         </motion.div>
         <motion.div className="flex w-full flex-wrap items-center text-[15px] mt-8 gap-3 justify-center lg:justify-start" variants={itemVariants}>
           <p>Check out my</p>
