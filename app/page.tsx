@@ -53,7 +53,7 @@ const Home = () => {
         </motion.p>
         <motion.div className="flex mt-5 w-full items-center justify-center lg:justify-start" variants={itemVariants}>
           <a
-            href="/resume.pdf"
+            href="/Felix's updated resume.pdf"
             download
             className="bg-emerald-500 w-[400px] cursor-pointer rounded-md p-1.5 items-center justify-center text-gray-900 flex text-[13px] mt-3 hover:bg-emerald-600 hover:text-gray-900 transition-colors"
           >
