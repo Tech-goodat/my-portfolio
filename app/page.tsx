@@ -49,7 +49,7 @@ const Home = () => {
           A Software Developer
         </motion.h2>
         <motion.h3 className="text-[10px] text-gray-400 gap-2 flex w-full" variants={itemVariants}>
-          Trust me this portfolio looks better on molile, I promise! 😂😂😂
+          Trust me this portfolio looks better on <span className="text-emerald-300">Mobile</span>, I promise! 😂😂😂
         </motion.h3>
         <motion.p className="flex text-[14px] md:text-[15px] mt-2  lg:text-left" variants={itemVariants}>
          Frontend engineer with expertise in React, Next.js, and Tailwind CSS, experienced in building responsive apps and consuming APIs. Currently gaining hands-on experience with Python, REST APIs, JWT authentication, and database design, transitioning into fullstack development with a focus on scalable and secure backend systems.
