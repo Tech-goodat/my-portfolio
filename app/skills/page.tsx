@@ -24,7 +24,7 @@ const Skills = () => {
       transition={{ duration: 0.8 }}
     >
       <motion.div
-        className='lg:mt-[120px] flex flex-col w-full items-center'
+        className='lg:mt-[10px] flex flex-col w-full items-center'
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.1 }}
