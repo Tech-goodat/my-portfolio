@@ -85,7 +85,7 @@ const Home = () => {
       </motion.div>
       <motion.div className="flex w-full  items-center justify-center flex-col mt-10 lg:mt-0" variants={itemVariants}>
         <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.8, delay: 0.5, type: 'spring' }}>
-          <Image src="/felix.jpeg" width={500} height={500} alt="jerry" className="rounded-full shadow-lg w-[220px] h-[220px] md:w-[400px] md:h-[400px] object-cover" />
+          <Image src="/pic.jpg" width={500} height={500} alt="jerry" className="rounded-xl shadow-lg w-[400px] h-[400px] md:w-[400px] md:h-[400px] object-cover" />
         </motion.div>
       </motion.div>
     </motion.div>
