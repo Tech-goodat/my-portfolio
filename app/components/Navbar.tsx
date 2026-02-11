@@ -26,10 +26,10 @@ const Navbar = () => {
 
   return (
     <div className='flex w-full lg:px-[200px] lg:mt-12 items-center justify-between'>
-      <div className='flex gap-3 ml-5 mt-5 lg:mt-0 w-full lg:w-7 items-center justify-center'>
+      <Link href="/" className='flex gap-3 ml-5 mt-5 lg:mt-0 w-full lg:w-7 items-center justify-center'>
         <Image src="/logo.png" width={35} height={35} alt="logo"/>
         <h1 className='font-semibold '>Good<span className='text-emerald-500'>At</span></h1>
-      </div>
+      </Link>
       <div className='hidden lg:flex'>
         <ul className='flex text-[13px] gap-8 mr-5 text-gray-300'>
           {navLinks.map(link => (

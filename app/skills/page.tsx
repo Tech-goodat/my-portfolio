@@ -29,10 +29,10 @@ const Skills = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.1 }}
       >
-        <h1 className='flex w-full items-center gap-3 ml-4 lg:ml-9'>
+        <h1 className='flex w-full items-center gap-3 ml-8 lg:ml-9'>
           My <span className='text-emerald-500'>skills</span>
         </h1>
-        <h2 className='w-full mt-5 flex items-center text-3xl md:text-4xl font-semibold text-center ml-4 lg:ml-9'>What I Do</h2>
+        <h2 className='w-full mt-5 flex items-center text-3xl md:text-4xl font-semibold text-center ml-8 lg:ml-9'>What I Do</h2>
       </motion.div>
       <div className='w-full mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center'>
         {[{
@@ -42,11 +42,11 @@ const Skills = () => {
         }, {
           icon: <FaServer size={50} className='text-emerald-200' />,
           title: 'Backend Development',
-          desc: 'I’m a backend developer skilled in Python, Flask, and Django, building secure, scalable APIs with robust database design, JWT authentication, and efficient server-side logic for seamless frontend integration.'
+          desc: 'My skills in Python with Flask allows me to build robust backend systems, including RESTful APIs and server-side logic, ensuring efficient data handling and seamless integration with frontend applications.'
         }, {
           icon: <FaRobot size={50} className='text-emerald-200' />,
           title: 'Artificial Intelligence',
-          desc: 'I’m an AI developer skilled in Python and machine learning, creating intelligent systems that automate tasks, analyze data, and enhance user experiences through smart, data-driven solutions.'
+          desc: 'I have skills in Generative AI for software development, leveraging AI tools to enhance coding efficiency, including code generation, debugging, and optimization for innovative solutions.'
         }].map((card, i) => (
           <motion.div
             key={card.title}

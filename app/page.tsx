@@ -49,7 +49,7 @@ const Home = () => {
           Seasoned Software <span className="text-emerald-300">&</span> AI Engineer
         </motion.h2>
         <motion.p className="flex text-[14px] md:text-[15px] mt-2  lg:text-left" variants={itemVariants}>
-          I&apos;m a Fullstack Software and AI Engineer passionate about building intelligent, user-focused web and mobile applications. I combine strong frontend and backend expertise with creativity to deliver innovative, scalable solutions.
+         Frontend engineer with expertise in React, Next.js, and Tailwind CSS, experienced in building responsive apps and consuming APIs. Currently gaining hands-on experience with Python, REST APIs, JWT authentication, and database design, transitioning into fullstack development with a focus on scalable and secure backend systems.
         </motion.p>
         <motion.div className="flex mt-5 w-full items-center justify-center lg:justify-start" variants={itemVariants}>
           <a
@@ -64,7 +64,7 @@ const Home = () => {
           <p className="">Check out my</p>
           <span className="text-gray-800">-</span>
           <a
-            href="https://www.linkedin.com/in/kiprotich-felix-b87a11228/"
+            href="https://www.linkedin.com/in/felix-kiprotich-b87a11228/"
             target="_blank"
             rel="noopener noreferrer"
             className="items-center p-1 bg-emerald-300 cursor-pointer border rounded-full border-emerald-400 hover:bg-emerald-800 text-gray-800 transition-colors"

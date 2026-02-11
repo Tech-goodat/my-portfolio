@@ -28,7 +28,7 @@ const itemVariants = {
 const EMAIL_TO = "felixkiprotich2000@gmail.com";
 const PHONE = "+254 758364336";
 const WHATSAPP = "+254 758364336";
-const LINKEDIN = "https://linkedin.com/in/kiprotich-felix-b87a11228/";
+const LINKEDIN = "https://www.linkedin.com/in/felix-kiprotich-b87a11228/";
 const GITHUB = "https://github.com/Tech-goodat";
 
 const Contact = () => {
@@ -171,7 +171,7 @@ const Contact = () => {
                 className="hover:text-emerald-500 transition-colors text-sm md:text-base cursor-pointer"
                 style={{ textDecoration: "none" }}
               >
-                linkedin.com/in/kiprotich-felix-b87a11228
+                LinkedIn
               </a>
               <button
                 onClick={() => handleCopy(LINKEDIN, "linkedin")}
@@ -196,7 +196,7 @@ const Contact = () => {
                 className="hover:text-emerald-500 transition-colors text-sm md:text-base cursor-pointer"
                 style={{ textDecoration: "none" }}
               >
-                github.com/Tech-goodat
+                Tech-goodat
               </a>
               <button
                 onClick={() => handleCopy(GITHUB, "github")}

@@ -61,13 +61,13 @@ const Projects = () => {
       animate="visible"
     >
       <motion.h1
-        className="text-3xl flex text-center md:text-4xl font-bold  mb-2 text-emerald-400"
+        className="text-3xl flex  md:text-4xl font-bold  mb-2 text-emerald-400"
         variants={itemVariants}
       >
         My Projects
       </motion.h1>
       <motion.p
-        className="text-gray-400 flex lg:w-full text-center  mb-10 max-w-2xl"
+        className="text-gray-400 flex lg:w-full lg:text-center   mb-10 max-w-2xl"
         variants={itemVariants}
       >
         Explore some of the projects I&apos;ve worked on. Each project showcases my skills, creativity, and passion for building impactful solutions.

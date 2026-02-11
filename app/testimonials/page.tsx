@@ -36,7 +36,7 @@ const Testimonials = () => {
     >
       <div className='lg:mt-[120px] flex flex-col  w-full items-center'>
         <motion.h1
-          className='flex w-full ml-3 lg:ml-9 items-center gap-3 '
+          className='flex w-full ml-8 lg:ml-9 items-center gap-3 '
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
@@ -44,7 +44,7 @@ const Testimonials = () => {
           What<span className='text-emerald-500'>They</span>
         </motion.h1>
         <motion.h2
-          className='w-full mt-5 flex items-center text-3xl md:text-4xl font-semibold  ml-3 lg:ml-9'
+          className='w-full mt-5 flex items-center text-3xl md:text-4xl font-semibold  ml-8 lg:ml-9'
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
