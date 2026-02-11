@@ -46,7 +46,7 @@ const Home = () => {
           Felix Kiprotich
         </motion.h2>
         <motion.h2 className="text-xl gap-2 flex w-full" variants={itemVariants}>
-          Software Developer
+          A Software Developer
         </motion.h2>
         <motion.p className="flex text-[14px] md:text-[15px] mt-2  lg:text-left" variants={itemVariants}>
          Frontend engineer with expertise in React, Next.js, and Tailwind CSS, experienced in building responsive apps and consuming APIs. Currently gaining hands-on experience with Python, REST APIs, JWT authentication, and database design, transitioning into fullstack development with a focus on scalable and secure backend systems.
