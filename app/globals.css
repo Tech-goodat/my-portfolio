@@ -1,29 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: rgb(32, 34, 36);
-  --foreground: #ededed;
+  --bg-primary: #050d1a;
+  --bg-secondary: #0a1628;
+  --bg-card: #0d1f38;
+  --bg-card-hover: #112444;
+  --accent-blue: #3b82f6;
+  --accent-cyan: #06b6d4;
+  --accent-violet: #818cf8;
+  --gradient-hero: linear-gradient(135deg, #1e3a5f 0%, #0f172a 50%, #0c1a2e 100%);
+  --gradient-accent: linear-gradient(135deg, #3b82f6, #06b6d4);
+  --gradient-subtle: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(6,182,212,0.08));
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #475569;
+  --border-subtle: rgba(59, 130, 246, 0.15);
+  --border-glow: rgba(59, 130, 246, 0.4);
+  --glow-blue: 0 0 40px rgba(59, 130, 246, 0.2);
+  --glow-cyan: 0 0 40px rgba(6, 182, 212, 0.2);
+  --font-display: 'Sora', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  min-height: 100vh;
+  overflow-x: hidden;
 }
+
+/* Ambient background mesh */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 10%, rgba(59,130,246,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 90%, rgba(6,182,212,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 50% 50%, rgba(129,140,248,0.04) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--accent-blue), var(--accent-cyan));
+  border-radius: 2px;
+}
+
+/* Selection */
+::selection {
+  background: rgba(59,130,246,0.3);
+  color: #e2e8f0;
+}
+
+/* Utility: gradient text */
+.gradient-text {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Utility: glow button */
+.btn-glow {
+  background: var(--gradient-accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-display);
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-glow:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 30px rgba(59,130,246,0.4);
+}
+.btn-glow:active { transform: translateY(0); }
+
+/* Utility: glass card */
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+.glass-card:hover {
+  border-color: var(--border-glow);
+  box-shadow: var(--glow-blue);
+}
+
+/* Scrollbar */
+a, button { color: var(--text-primary); }
 
 /* Ensure all major containers use the theme variables */
-.main-content,
-.navbar,
-.footer {
-  background: var(--background);
-  color: var(--foreground);
+.main-content, .navbar, .footer {
+  background: transparent;
+  color: var(--text-primary);
 }
-
-/* Example for links and buttons */
-a, button {
-  color: var(--foreground);
-}
-
-/* If you use Tailwind, add these classes to your components: 
-   bg-[var(--background)] text-[var(--foreground)]
-*/
