@@ -1,17 +1,39 @@
 "use client";
+import React from 'react';
+import { IoIosStar } from "react-icons/io";
+import Image from 'next/image';
+import { motion, Variants } from 'framer-motion';
 
-import React from "react";
-import { CiLinkedin } from "react-icons/ci";
-import { FaGithub } from "react-icons/fa";
-import Image from "next/image";
-import { motion, Variants } from "framer-motion";
+const testimonials = [
+  {
+    img: '/woman.jpeg',
+    name: 'Anita Kahenya',
+    title: 'Technical Mentor, Moringa School',
+    text: 'Felix is a dedicated and talented developer. His attention to detail and ability to solve complex problems make him a valuable asset to any team. He consistently delivers high-quality work and is always eager to learn new technologies.',
+    color: '#3b82f6',
+  },
+  {
+    img: '/mother.jpeg',
+    name: 'Titus',
+    title: 'Project Manager, Moringa School',
+    text: 'Working with Felix has been a pleasure. He communicates effectively, meets deadlines, and brings creative solutions to the table. His frontend skills are top-notch, and he adapts quickly to project requirements.',
+    color: '#06b6d4',
+  },
+  {
+    img: '/father.jpeg',
+    name: 'John',
+    title: 'Lead Engineer, DevWorks',
+    text: 'Felix demonstrates strong technical skills and a passion for coding. He is reliable, proactive, and always willing to help others. His contributions have greatly improved our project outcomes.',
+    color: '#818cf8',
+  },
+];
 
 const containerVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.3,
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
     },
   },
 };
@@ -19,255 +41,135 @@ const containerVariants: Variants = {
 const itemVariants: Variants = {
   hidden: {
     opacity: 0,
-    y: 28,
+    y: 32,
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.7,
-      ease: [0.22, 1, 0.36, 1],
+      duration: 0.65,
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   },
 };
 
-const Home = () => {
+const Testimonials = () => {
   return (
     <motion.div
-      className="flex flex-col min-h-screen pt-24 pb-16 lg:pt-0 justify-center items-center px-6 lg:grid lg:grid-cols-2 lg:px-[120px] gap-12"
+      className="flex w-full min-h-screen flex-col px-6 pt-28 pb-16 lg:pt-24 lg:px-[120px] items-center"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
-      {/* Left */}
+      {/* Header */}
       <motion.div
-        className="flex w-full gap-4 items-start justify-center flex-col max-w-xl mx-auto"
         variants={itemVariants}
+        className="flex flex-col items-center gap-3 mb-14 w-full"
       >
-        {/* Status badge */}
-        <motion.div
-          variants={itemVariants}
-          className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium"
+        <span
+          className="text-xs font-medium px-3 py-1 rounded-full tracking-widest uppercase"
           style={{
-            background: "rgba(59,130,246,0.1)",
-            border: "1px solid rgba(59,130,246,0.25)",
-            color: "#60a5fa",
+            background: 'rgba(59,130,246,0.1)',
+            border: '1px solid rgba(59,130,246,0.25)',
+            color: '#60a5fa',
           }}
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          Available for work
-        </motion.div>
+          Social Proof
+        </span>
 
-        {/* Greeting */}
-        <motion.p
-          variants={itemVariants}
-          className="text-slate-400 text-base font-light tracking-wide"
-        >
-          Hello, I&apos;m
-        </motion.p>
-
-        {/* Name */}
-        <motion.h1
-          variants={itemVariants}
-          className="text-4xl sm:text-5xl font-bold leading-tight"
-          style={{
-            background:
-              "linear-gradient(135deg, #e2e8f0 30%, #3b82f6 70%, #06b6d4)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
-          }}
-        >
-          Felix Kiprotich
-        </motion.h1>
-
-        {/* Role */}
-        <motion.div variants={itemVariants} className="flex items-center gap-3">
-          <span className="text-lg text-slate-300 font-medium">
-            Software Developer
-          </span>
+        <h1 className="text-4xl md:text-5xl font-bold text-center">
+          What They{" "}
           <span
-            className="h-px flex-1 max-w-[80px]"
             style={{
-              background:
-                "linear-gradient(90deg, rgba(59,130,246,0.6), transparent)",
-            }}
-          />
-        </motion.div>
-
-        {/* Mobile note */}
-        <motion.p
-          variants={itemVariants}
-          className="text-[11px] text-slate-500 flex items-center gap-1.5"
-        >
-          <span style={{ color: "#06b6d4" }}>✦</span>
-          This portfolio looks even better on mobile, I promise! 😂
-        </motion.p>
-
-        {/* Bio */}
-        <motion.p
-          variants={itemVariants}
-          className="text-[14.5px] leading-relaxed text-slate-400 max-w-lg"
-        >
-          Frontend engineer with expertise in{" "}
-          <span style={{ color: "#60a5fa" }}>React</span>,{" "}
-          <span style={{ color: "#06b6d4" }}>Next.js</span>, and{" "}
-          <span style={{ color: "#818cf8" }}>Tailwind CSS</span>, experienced in
-          building responsive apps and consuming APIs. Transitioning into
-          fullstack with Python, REST APIs, and scalable backend systems.
-        </motion.p>
-
-        {/* CTA + Socials */}
-        <motion.div
-          variants={itemVariants}
-          className="flex flex-col gap-4 w-full mt-2"
-        >
-          <a
-            href="/Resume.pdf"
-            download
-            className="flex items-center justify-center gap-2 py-3 px-6 rounded-xl text-sm font-medium w-full max-w-xs"
-            style={{
-              background: "linear-gradient(135deg, #2563eb, #0891b2)",
-              color: "#fff",
+              background: 'linear-gradient(135deg, #3b82f6, #06b6d4)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
             }}
           >
-            Download CV
-          </a>
+            Say
+          </span>
+        </h1>
 
-          <div className="flex items-center gap-4">
-            <span className="text-slate-500 text-sm">Find me on</span>
-
-            <div className="flex gap-2">
-              <a
-                href="https://www.linkedin.com/in/felix-kiprotich-b87a11228/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-9 h-9 rounded-xl"
-                style={{
-                  background: "rgba(59,130,246,0.1)",
-                  border: "1px solid rgba(59,130,246,0.25)",
-                  color: "#60a5fa",
-                }}
-              >
-                <CiLinkedin size={20} />
-              </a>
-
-              <a
-                href="https://github.com/Tech-goodat"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-9 h-9 rounded-xl"
-                style={{
-                  background: "rgba(6,182,212,0.1)",
-                  border: "1px solid rgba(6,182,212,0.25)",
-                  color: "#22d3ee",
-                }}
-              >
-                <FaGithub size={18} />
-              </a>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Stats */}
-        <motion.div
-          variants={itemVariants}
-          className="flex gap-6 mt-4 pt-4 w-full"
-          style={{ borderTop: "1px solid rgba(59,130,246,0.1)" }}
-        >
-          {[
-            { num: "3+", label: "Projects Shipped" },
-            { num: "2+", label: "Years Coding" },
-            { num: "5+", label: "Tech Stack" },
-          ].map((s) => (
-            <div key={s.label} className="flex flex-col gap-0.5">
-              <span
-                className="text-xl font-bold"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #3b82f6, #06b6d4)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
-                {s.num}
-              </span>
-              <span className="text-[11px] text-slate-500">{s.label}</span>
-            </div>
-          ))}
-        </motion.div>
+        <p className="text-slate-400 text-center max-w-md text-sm leading-relaxed">
+          Words from mentors and collaborators who&apos;ve seen me work up close.
+        </p>
       </motion.div>
 
-      {/* Right */}
-      <motion.div
-        className="flex w-full items-center justify-center mt-8 lg:mt-0"
-        variants={itemVariants}
-      >
-        <motion.div
-          initial={{ scale: 0.85, opacity: 0, rotate: -3 }}
-          animate={{ scale: 1, opacity: 1, rotate: 0 }}
-          transition={{ duration: 1, delay: 0.5, type: "spring", bounce: 0.3 }}
-          className="relative"
-        >
-          <div
-            className="absolute inset-0 rounded-2xl"
-            style={{
-              background:
-                "linear-gradient(135deg, #3b82f6, #06b6d4, #818cf8)",
-              filter: "blur(24px)",
-              opacity: 0.35,
-              transform: "scale(1.08)",
-            }}
-          />
-
-          <div
-            className="relative p-[2px] rounded-2xl"
-            style={{
-              background:
-                "linear-gradient(135deg, #3b82f6, #06b6d4, #818cf8)",
-            }}
-          >
-            <Image
-              src="/pic.jpg"
-              width={420}
-              height={420}
-              alt="Felix Kiprotich"
-              className="rounded-2xl object-cover w-[300px] h-[300px] sm:w-[360px] sm:h-[360px] lg:w-[420px] lg:h-[420px]"
-            />
-          </div>
-
-          {/* Badges */}
+      {/* Cards */}
+      <div className="w-full max-w-5xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {testimonials.map((t, idx) => (
           <motion.div
-            className="absolute -bottom-4 -left-4 px-3 py-2 rounded-xl text-xs font-medium"
+            key={idx}
+            variants={itemVariants}
+            whileHover={{ y: -6 }}
+            className="flex flex-col gap-4 p-5 rounded-2xl relative overflow-hidden"
             style={{
-              background: "rgba(10, 22, 40, 0.95)",
-              border: "1px solid rgba(59,130,246,0.3)",
-              color: "#60a5fa",
+              background: 'rgba(13,31,56,0.8)',
+              border: '1px solid rgba(59,130,246,0.12)',
+              transition: 'all 0.3s',
             }}
-            initial={{ opacity: 0, x: -16 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1.1, duration: 0.5 }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.borderColor = `${t.color}40`;
+              (e.currentTarget as HTMLElement).style.boxShadow = `0 12px 40px ${t.color}12`;
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.borderColor = 'rgba(59,130,246,0.12)';
+              (e.currentTarget as HTMLElement).style.boxShadow = 'none';
+            }}
           >
-            ⚡ Fullstack Dev
-          </motion.div>
+            {/* Decorative quote mark */}
+            <div
+              className="absolute top-4 right-4 text-5xl font-serif leading-none select-none"
+              style={{ color: `${t.color}20` }}
+            >
+              "
+            </div>
 
-          <motion.div
-            className="absolute -top-4 -right-4 px-3 py-2 rounded-xl text-xs font-medium"
-            style={{
-              background: "rgba(10, 22, 40, 0.95)",
-              border: "1px solid rgba(6,182,212,0.3)",
-              color: "#22d3ee",
-            }}
-            initial={{ opacity: 0, x: 16 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1.3, duration: 0.5 }}
-          >
-            🤖 AI-Powered
+            {/* Stars */}
+            <div className="flex gap-0.5">
+              {[...Array(5)].map((_, i) => (
+                <IoIosStar key={i} size={13} style={{ color: '#fbbf24' }} />
+              ))}
+            </div>
+
+            {/* Quote */}
+            <p className="text-[13px] leading-relaxed text-slate-400 flex-1 relative z-10">
+              &ldquo;{t.text}&rdquo;
+            </p>
+
+            {/* Author */}
+            <div
+              className="flex items-center gap-3 pt-4"
+              style={{ borderTop: '1px solid rgba(59,130,246,0.1)' }}
+            >
+              <div
+                className="p-[1.5px] rounded-full shrink-0"
+                style={{
+                  background: `linear-gradient(135deg, ${t.color}, transparent)`,
+                }}
+              >
+                <Image
+                  src={t.img}
+                  className="rounded-full object-cover block"
+                  width={36}
+                  height={36}
+                  alt={t.name}
+                />
+              </div>
+
+              <div>
+                <p className="text-[13px] font-semibold text-slate-200">
+                  {t.name}
+                </p>
+                <p className="text-[11px] text-slate-500">{t.title}</p>
+              </div>
+            </div>
           </motion.div>
-        </motion.div>
-      </motion.div>
+        ))}
+      </div>
     </motion.div>
   );
 };
 
-export default Home;
+export default Testimonials;
