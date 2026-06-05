@@ -31,16 +31,16 @@ const itemVariants: Variants = {
 
 const projects = [
   {
-    title: "HealthWise HMS",
+    title: "Lifepulse",
     description:
-      "A modern hospital management system for clinics and hospitals. Features patient registration, appointment scheduling, billing, staff management, and medical records.",
-    image: "/hospital.png",
-    github: "https://github.com/Tech-goodat/Healthwise-HMS",
-    live: "https://main.d2crs00234wk9u.amplifyapp.com/sign%20up",
-    tags: ["React", "Flask", "AWS Amplify"],
+      "LifePulse is a health and wellness platform that helps users track fitness, nutrition, and personal health metrics through an intuitive dashboard, enabling better lifestyle decisions through data-driven insights.",
+    image: "/lifepulse.png",
+    github: "https://github.com/Tech-goodat/lifepulse_client",
+    live: "https://lifepulse-client.vercel.app/",
+    tags: ["Next.js", "Flask","SQLAlchemy", "Tailwind"],
     color: "#3b82f6",
   },
-  {
+ /* {
     title: "Umbrella Payment App",
     description:
       "A digital wallet and payment platform — send, receive, and manage money securely. Includes authentication, transaction history, and a clean real-time dashboard.",
@@ -50,14 +50,15 @@ const projects = [
     tags: ["Next.js", "Tailwind", "Flask"],
     color: "#06b6d4",
   },
+  */
   {
-    title: "UsafiPlus Website",
+    title: "MajiSmart",
     description:
-      "Web platform for a sanitation and waste management service. Users book pickups, learn about services, and contact support — built for accessibility and responsiveness.",
-    image: "/usafi.png",
-    github: "https://github.com/Tech-goodat/usafi-app",
-    live: "https://main.d1vn6nn8njjzxw.amplifyapp.com/",
-    tags: ["React", "AWS", "CSS"],
+      "MajiSmart is an IoT-based water monitoring platform that tracks water usage in real time, detects leaks, and provides actionable insights through a web dashboard to help reduce water wastage.",
+    image: "/majismart.png",
+    github: "https://github.com/Tech-goodat/majismart",
+    live: "https://majismart-seven.vercel.app/",
+    tags: ["Next.js", "DRF", "Tailwind", "Shadcn", "Vapi AI", "IoT"],
     color: "#818cf8",
   },
 ];
@@ -132,11 +133,11 @@ const Projects = () => {
               }}
             >
               {/* Image */}
-              <div className="relative w-full h-48 overflow-hidden">
+              <div className="relative w-full h-48  p-2 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                  className="object-contain rounded-2xl w-full h-full transition-transform duration-500 group-hover:scale-105"
                 />
 
                 <div
