@@ -9,7 +9,7 @@ const skills = [
     icon: FaLaptopCode,
     title: "Frontend Development",
     desc:
-      "React.js, Next.js, and Tailwind CSS — building fast, responsive, visually striking interfaces with clean code, smooth UX, and seamless API integrations.",
+      "React.js, Next.js, and Tailwind CSS, building fast, responsive, visually striking interfaces with clean code, smooth UX, and seamless API integrations.",
     tags: ["React.js", "Next.js", "Tailwind CSS", "TypeScript"],
     color: "#3b82f6",
   },
@@ -17,18 +17,23 @@ const skills = [
     icon: FaServer,
     title: "Backend Development",
     desc:
-      "Python with Flask for robust backend systems — RESTful APIs, server-side logic, JWT auth, and database design for efficient, secure data handling.",
-    tags: ["Python", "Flask", "REST APIs", "PostgreSQL"],
+      "Python with Flask, DRF, and FastAPI for robust backend systems, RESTful APIs, server-side logic, JWT auth, and database design for efficient, secure data handling. Node.js for scalable, event-driven applications and real-time features.",
+    tags: ["Python", "Flask", "DRF", "FastAPI", "Node.js", "REST APIs", "PostgreSQL"],
     color: "#06b6d4",
   },
   {
-    icon: FaRobot,
-    title: "Artificial Intelligence",
-    desc:
-      "Generative AI for software development — leveraging AI tools for code generation, debugging, and optimization to build innovative, efficient solutions.",
-    tags: ["Generative AI", "Code Gen", "AI Debugging", "LLMs"],
-    color: "#818cf8",
-  },
+  icon: FaRobot,
+  title: "Artificial Intelligence Systems",
+  desc:
+    "Building AI-powered applications by integrating LLM APIs, designing intelligent backend workflows, and implementing real-world automation systems such as chat agents, decision pipelines, and data-driven services.",
+  tags: [
+    "LLM Integrations",
+    "AI Agents",
+    "Backend Automation",
+    "Workflow Orchestration",
+  ],
+  color: "#818cf8",
+}
 ];
 
 const containerVariants: Variants = {
@@ -59,7 +64,7 @@ const itemVariants: Variants = {
 const Skills = () => {
   return (
     <motion.div
-      className="flex w-full flex-col items-center px-6 pt-28 pb-16 lg:pt-24 lg:px-[120px]"
+      className="flex w-full flex-col items-center px-6 pt-8 pb-16 lg:pt-5 lg:px-[120px]"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -182,13 +187,17 @@ const Skills = () => {
             "TypeScript",
             "Python",
             "Flask",
-            "Tailwind",
+            "DRF",
+            "FastAPI",
+            "Node.js",
+            "Tailwind CSS",
             "PostgreSQL",
             "AWS",
             "Git",
+            "Docker",
             "REST API",
             "JWT",
-            "Vercel",
+            "LLM Integrations",
           ].map((tech) => (
             <span
               key={tech}

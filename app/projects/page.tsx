@@ -65,7 +65,7 @@ const projects = [
 const Projects = () => {
   return (
     <motion.section
-      className="min-h-screen w-full px-6 pt-28 pb-16 lg:pt-24 lg:px-[120px] flex flex-col items-center"
+      className="min-h-screen w-full px-6 pt-12 pb-16 lg:pt-12 lg:px-[120px] flex flex-col items-center"
       variants={containerVariants}
       initial="hidden"
       animate="visible"

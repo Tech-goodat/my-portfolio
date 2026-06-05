@@ -80,7 +80,7 @@ const itemVariants: Variants = {
 const Education = () => {
   return (
     <motion.div
-      className="min-h-screen flex flex-col w-full items-center px-6 pt-28 pb-16 lg:pt-24 lg:px-[120px]"
+      className="min-h-screen flex flex-col w-full items-center px-6 pt-12 pb-16 lg:pt-12 lg:px-[120px]"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -128,7 +128,7 @@ const Education = () => {
             key={edu.institution + edu.year}
             variants={itemVariants}
             whileHover={{ x: 4 }}
-            className="flex flex-col sm:flex-row gap-0 rounded-2xl overflow-hidden"
+            className="flex flex-col p-4 sm:flex-row gap-0 rounded-2xl overflow-hidden"
             style={{
               background: "rgba(13,31,56,0.8)",
               border: "1px solid rgba(59,130,246,0.12)",
@@ -140,7 +140,7 @@ const Education = () => {
             <div className="sm:w-48 shrink-0 relative overflow-hidden">
               <Image
                 src={edu.image}
-                className="object-cover w-full h-40 sm:h-full"
+                className=" w-full h-40 sm:h-full"
                 width={192}
                 height={220}
                 alt={edu.alt}

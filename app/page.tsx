@@ -33,7 +33,7 @@ const itemVariants: any = {
 const Home = () => {
   return (
     <motion.div
-      className="flex flex-col min-h-screen pt-24 pb-16 lg:pt-0 justify-center items-center px-6 lg:grid lg:grid-cols-2 lg:px-[120px] gap-12"
+      className="flex flex-col min-h-screen pt-18 pb-16 lg:pt-0 justify-center items-center px-6 lg:grid lg:grid-cols-2 lg:px-[120px] gap-12"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -83,7 +83,7 @@ const Home = () => {
         {/* Role */}
         <motion.div variants={itemVariants} className="flex items-center gap-3">
           <span className="text-lg text-slate-300 font-medium">
-            Software Developer
+            Software Engineer
           </span>
           <span
             className="h-px flex-1 max-w-[80px]"
@@ -97,7 +97,7 @@ const Home = () => {
         {/* Mobile note */}
         <motion.p
           variants={itemVariants}
-          className="text-[11px] text-slate-500 flex items-center gap-1.5"
+          className="text-[11px] text-slate-500 hidden md:flex items-center gap-1.5"
         >
           <span style={{ color: "#06b6d4" }}>✦</span>
           This portfolio looks even better on mobile, I promise! 😂
@@ -108,12 +108,16 @@ const Home = () => {
           variants={itemVariants}
           className="text-[14.5px] leading-relaxed text-slate-400 max-w-lg"
         >
-          Frontend engineer with expertise in{" "}
-          <span style={{ color: "#60a5fa" }}>React</span>,{" "}
-          <span style={{ color: "#06b6d4" }}>Next.js</span>, and{" "}
-          <span style={{ color: "#818cf8" }}>Tailwind CSS</span>, experienced in
-          building responsive apps and consuming APIs. Transitioning into
-          fullstack with Python, REST APIs, and scalable backend systems.
+         Fullstack Engineer with strong frontend expertise in{" "}
+<span style={{ color: "#60a5fa" }}>React</span>,{" "}
+<span style={{ color: "#06b6d4" }}>Next.js</span>, and{" "}
+<span style={{ color: "#818cf8" }}>Tailwind CSS</span>, building responsive,
+high-performance web applications and seamless user experiences.
+
+Focused on backend systems, APIs, and scalable architectures using{" "}
+Python, REST/GraphQL APIs, and cloud services, with growing specialization in
+AI integrations (LLMs, automation pipelines) and IoT systems for connected,
+data-driven applications.
         </motion.p>
 
         {/* CTA + Socials */}
@@ -176,7 +180,7 @@ const Home = () => {
         >
           {[
             { num: "3+", label: "Projects Shipped" },
-            { num: "2+", label: "Years Coding" },
+            { num: "4+", label: "Years Coding" },
             { num: "5+", label: "Tech Stack" },
           ].map((s) => (
             <div key={s.label} className="flex flex-col gap-0.5">
