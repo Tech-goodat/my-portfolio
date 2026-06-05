@@ -126,7 +126,7 @@ data-driven applications.
           className="flex flex-col gap-4 w-full mt-2"
         >
           <a
-            href="/Resume.pdf"
+            href="/kiprotichCV.pdf"
             download
             className="flex items-center justify-center gap-2 py-3 px-6 rounded-xl text-sm font-medium w-full max-w-xs"
             style={{

@@ -22,7 +22,7 @@ const testimonials = [
   {
     img: '/father.jpeg',
     name: 'John',
-    title: 'Lead Engineer, DevWorks',
+    title: 'Lead Engineer, BitNorm',
     text: 'Felix demonstrates strong technical skills and a passion for coding. He is reliable, proactive, and always willing to help others. His contributions have greatly improved our project outcomes.',
     color: '#818cf8',
   },
