@@ -33,7 +33,7 @@ const itemVariants: any = {
 const Home = () => {
   return (
     <motion.div
-      className="flex flex-col min-h-screen pt-18 pb-16 lg:pt-0 justify-center items-center px-6 lg:grid lg:grid-cols-2 lg:px-[120px] gap-12"
+      className="flex flex-col min-h-screen mt-20 pt-18 pb-16 lg:pt-0 justify-center items-center px-6 lg:grid lg:grid-cols-2 lg:px-[120px] gap-12 bg-white"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -46,21 +46,16 @@ const Home = () => {
         {/* Status badge */}
         <motion.div
           variants={itemVariants}
-          className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium"
-          style={{
-            background: "rgba(59,130,246,0.1)",
-            border: "1px solid rgba(59,130,246,0.25)",
-            color: "#60a5fa",
-          }}
+          className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-orange-50 border border-orange-200 text-orange-400"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="w-1.5 h-1.5 rounded-full bg-lime-700 animate-pulse" />
           Available for work
         </motion.div>
 
         {/* Greeting */}
         <motion.p
           variants={itemVariants}
-          className="text-slate-400 text-base font-light tracking-wide"
+          className="text-gray-500 text-base font-light tracking-wide"
         >
           Hello, I&apos;m
         </motion.p>
@@ -68,56 +63,45 @@ const Home = () => {
         {/* Name */}
         <motion.h1
           variants={itemVariants}
-          className="text-4xl sm:text-5xl font-bold leading-tight"
-          style={{
-            background:
-              "linear-gradient(135deg, #e2e8f0 30%, #3b82f6 70%, #06b6d4)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
-          }}
+          className="text-4xl sm:text-5xl font-bold leading-tight text-gray-700"
         >
-          Felix Kiprotich
+          Felix <span className="text-orange-400">Kiprotich</span>
         </motion.h1>
 
         {/* Role */}
         <motion.div variants={itemVariants} className="flex items-center gap-3">
-          <span className="text-lg text-slate-300 font-medium">
+          <span className="text-lg text-gray-700 font-medium">
             Software Engineer
           </span>
-          <span
-            className="h-px flex-1 max-w-[80px]"
-            style={{
-              background:
-                "linear-gradient(90deg, rgba(59,130,246,0.6), transparent)",
-            }}
-          />
+          <span className="h-px flex-1 max-w-[80px] bg-orange-300" />
         </motion.div>
 
         {/* Mobile note */}
         <motion.p
           variants={itemVariants}
-          className="text-[11px] text-slate-500 hidden md:flex items-center gap-1.5"
+          className="text-[11px] text-gray-400 hidden md:flex items-center gap-1.5"
         >
-          <span style={{ color: "#06b6d4" }}>✦</span>
+          <span className="text-lime-600">✦</span>
           This portfolio looks even better on mobile, I promise! 😂
         </motion.p>
 
         {/* Bio */}
         <motion.p
           variants={itemVariants}
-          className="text-[14.5px] leading-relaxed text-slate-400 max-w-lg"
+          className="text-[14.5px] leading-relaxed text-gray-600 max-w-lg"
         >
-         Fullstack Engineer with strong frontend expertise in{" "}
-<span style={{ color: "#60a5fa" }}>React</span>,{" "}
-<span style={{ color: "#06b6d4" }}>Next.js</span>, and{" "}
-<span style={{ color: "#818cf8" }}>Tailwind CSS</span>, building responsive,
-high-performance web applications and seamless user experiences.
-
-Focused on backend systems, APIs, and scalable architectures using{" "}
-Python, REST/GraphQL APIs, and cloud services, with growing specialization in
-AI integrations (LLMs, automation pipelines) and IoT systems for connected,
-data-driven applications.
+          Fullstack Engineer with strong frontend expertise in{" "}
+          <span className="text-orange-400 font-medium">React</span>,{" "}
+          <span className="text-orange-400 font-medium">Next.js</span>, and{" "}
+          <span className="text-lime-600 font-medium">Tailwind CSS</span>,
+          building responsive, high-performance web applications and
+          seamless user experiences.
+          <br />
+          <br />
+          Focused on backend systems, APIs, and scalable architectures using
+          Python, REST/GraphQL APIs, and cloud services, with growing
+          specialization in AI integrations (LLMs, automation pipelines) and
+          IoT systems for connected, data-driven applications.
         </motion.p>
 
         {/* CTA + Socials */}
@@ -128,29 +112,20 @@ data-driven applications.
           <a
             href="/kiprotichCV.pdf"
             download
-            className="flex items-center justify-center gap-2 py-3 px-6 rounded-xl text-sm font-medium w-full max-w-xs"
-            style={{
-              background: "linear-gradient(135deg, #2563eb, #0891b2)",
-              color: "#fff",
-            }}
+            className="flex items-center justify-center gap-2 py-3 px-6 rounded-xl text-sm font-semibold w-full max-w-xs bg-orange-400 hover:bg-orange-500 text-white transition-colors shadow-sm hover:shadow-md"
           >
             Download CV
           </a>
 
           <div className="flex items-center gap-4">
-            <span className="text-slate-500 text-sm">Find me on</span>
+            <span className="text-gray-400 text-sm">Find me on</span>
 
             <div className="flex gap-2">
               <a
                 href="https://www.linkedin.com/in/felix-kiprotich-b87a11228/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-9 h-9 rounded-xl"
-                style={{
-                  background: "rgba(59,130,246,0.1)",
-                  border: "1px solid rgba(59,130,246,0.25)",
-                  color: "#60a5fa",
-                }}
+                className="flex items-center justify-center w-9 h-9 rounded-xl bg-orange-50 border border-orange-200 text-orange-600 hover:bg-orange-100 transition-colors"
               >
                 <CiLinkedin size={20} />
               </a>
@@ -159,12 +134,7 @@ data-driven applications.
                 href="https://github.com/Tech-goodat"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-9 h-9 rounded-xl"
-                style={{
-                  background: "rgba(6,182,212,0.1)",
-                  border: "1px solid rgba(6,182,212,0.25)",
-                  color: "#22d3ee",
-                }}
+                className="flex items-center justify-center w-9 h-9 rounded-xl bg-lime-50 border border-lime-200 text-lime-700 hover:bg-lime-100 transition-colors"
               >
                 <FaGithub size={18} />
               </a>
@@ -175,8 +145,7 @@ data-driven applications.
         {/* Stats */}
         <motion.div
           variants={itemVariants}
-          className="flex gap-6 mt-4 pt-4 w-full"
-          style={{ borderTop: "1px solid rgba(59,130,246,0.1)" }}
+          className="flex gap-6 mt-4 pt-4 w-full border-t border-gray-200"
         >
           {[
             { num: "3+", label: "Projects Shipped" },
@@ -184,18 +153,10 @@ data-driven applications.
             { num: "5+", label: "Tech Stack" },
           ].map((s) => (
             <div key={s.label} className="flex flex-col gap-0.5">
-              <span
-                className="text-xl font-bold"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #3b82f6, #06b6d4)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
+              <span className="text-xl font-bold text-orange-400">
                 {s.num}
               </span>
-              <span className="text-[11px] text-slate-500">{s.label}</span>
+              <span className="text-[11px] text-gray-500">{s.label}</span>
             </div>
           ))}
         </motion.div>
@@ -212,26 +173,8 @@ data-driven applications.
           transition={{ duration: 1, delay: 0.5, type: "spring", bounce: 0.3 }}
           className="relative"
         >
-          {/* Glow */}
-          <div
-            className="absolute inset-0 rounded-2xl"
-            style={{
-              background:
-                "linear-gradient(135deg, #3b82f6, #06b6d4, #818cf8)",
-              filter: "blur(24px)",
-              opacity: 0.35,
-              transform: "scale(1.08)",
-            }}
-          />
-
           {/* Image */}
-          <div
-            className="relative p-[2px] rounded-2xl"
-            style={{
-              background:
-                "linear-gradient(135deg, #3b82f6, #06b6d4, #818cf8)",
-            }}
-          >
+          <div className="relative p-[2px] rounded-2xl bg-orange-300">
             <Image
               src="/pic.jpg"
               width={420}
@@ -243,12 +186,7 @@ data-driven applications.
 
           {/* Badges */}
           <motion.div
-            className="absolute -bottom-4 -left-4 px-3 py-2 rounded-xl text-xs font-medium"
-            style={{
-              background: "rgba(10, 22, 40, 0.95)",
-              border: "1px solid rgba(59,130,246,0.3)",
-              color: "#60a5fa",
-            }}
+            className="absolute -bottom-4 -left-4 px-3 py-2 rounded-xl text-xs font-medium bg-white border border-orange-200 text-orange-600 shadow-sm"
             initial={{ opacity: 0, x: -16 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 1.1 }}
@@ -256,19 +194,7 @@ data-driven applications.
             ⚡ Fullstack Dev
           </motion.div>
 
-          <motion.div
-            className="absolute -top-4 -right-4 px-3 py-2 rounded-xl text-xs font-medium"
-            style={{
-              background: "rgba(10, 22, 40, 0.95)",
-              border: "1px solid rgba(6,182,212,0.3)",
-              color: "#22d3ee",
-            }}
-            initial={{ opacity: 0, x: 16 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1.3 }}
-          >
-            🤖 AI-Powered
-          </motion.div>
+         
         </motion.div>
       </motion.div>
     </motion.div>

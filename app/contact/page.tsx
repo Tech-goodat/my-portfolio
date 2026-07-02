@@ -15,8 +15,7 @@ import {
 const EMAIL_TO = "felixkiprotich2000@gmail.com";
 const PHONE = "+254 758364336";
 const WHATSAPP = "+254 758364336";
-const LINKEDIN =
-  "https://www.linkedin.com/in/felix-kiprotich-b87a11228/";
+const LINKEDIN = "https://www.linkedin.com/in/felix-kiprotich-b87a11228/";
 const GITHUB = "https://github.com/Tech-goodat";
 
 const contactItems = [
@@ -26,7 +25,7 @@ const contactItems = [
     value: EMAIL_TO,
     href: `mailto:${EMAIL_TO}`,
     copyKey: "email",
-    color: "#3b82f6",
+    accent: "orange",
   },
   {
     icon: FaPhoneAlt,
@@ -34,7 +33,7 @@ const contactItems = [
     value: PHONE,
     href: `tel:${PHONE.replace(/\s/g, "")}`,
     copyKey: "phone",
-    color: "#06b6d4",
+    accent: "lime",
   },
   {
     icon: FaWhatsapp,
@@ -42,7 +41,7 @@ const contactItems = [
     value: WHATSAPP,
     href: `https://wa.me/${WHATSAPP.replace(/\D/g, "")}`,
     copyKey: "whatsapp",
-    color: "#22c55e",
+    accent: "lime",
   },
   {
     icon: FaLinkedin,
@@ -50,7 +49,7 @@ const contactItems = [
     value: "View Profile",
     href: LINKEDIN,
     copyKey: "linkedin",
-    color: "#3b82f6",
+    accent: "orange",
   },
   {
     icon: FaGithub,
@@ -58,9 +57,14 @@ const contactItems = [
     value: "Tech-goodat",
     href: GITHUB,
     copyKey: "github",
-    color: "#818cf8",
+    accent: "orange",
   },
 ];
+
+const accentIconClasses: Record<string, string> = {
+  orange: "bg-orange-50 border-orange-200 text-orange-400",
+  lime: "bg-lime-50 border-lime-200 text-lime-700",
+};
 
 const containerVariants: Variants = {
   hidden: {},
@@ -113,9 +117,7 @@ const Contact = () => {
     e.preventDefault();
     setSending(true);
 
-    const subject = encodeURIComponent(
-      `Portfolio Contact from ${form.name}`
-    );
+    const subject = encodeURIComponent(`Portfolio Contact from ${form.name}`);
     const body = encodeURIComponent(
       `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
     );
@@ -125,57 +127,28 @@ const Contact = () => {
     setTimeout(() => setSending(false), 2000);
   };
 
-  const inputStyle: React.CSSProperties = {
-    background: "rgba(5,13,26,0.6)",
-    border: "1px solid rgba(59,130,246,0.2)",
-    borderRadius: "12px",
-    padding: "12px 16px",
-    color: "#e2e8f0",
-    fontSize: "14px",
-    outline: "none",
-    width: "100%",
-    transition: "border-color 0.2s",
-  };
+  const inputClass =
+    "bg-white border border-gray-200 focus:border-orange-400 rounded-xl px-4 py-3 text-gray-800 text-sm outline-none w-full transition-colors";
 
   return (
     <motion.section
-      className="min-h-screen flex items-center justify-center px-6 pt-28 pb-16 lg:pt-20"
+      className="min-h-screen flex items-center justify-center px-6 pt-28 pb-16 lg:pt-20 bg-white"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
       <div className="w-full max-w-5xl">
         {/* Header */}
-        <motion.div
-          variants={itemVariants}
-          className="flex flex-col items-center gap-3 mb-12"
-        >
-          <span
-            className="text-xs font-medium px-3 py-1 rounded-full tracking-widest uppercase"
-            style={{
-              background: "rgba(59,130,246,0.1)",
-              border: "1px solid rgba(59,130,246,0.25)",
-              color: "#60a5fa",
-            }}
-          >
+        <motion.div variants={itemVariants} className="flex flex-col items-center gap-3 mb-12">
+          <span className="text-xs font-medium px-3 py-1 rounded-full tracking-widest uppercase bg-orange-50 border border-orange-200 text-orange-400">
             Let&apos;s Connect
           </span>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-center">
-            Get In{" "}
-            <span
-              style={{
-                background: "linear-gradient(135deg, #3b82f6, #06b6d4)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              Touch
-            </span>
+          <h1 className="text-4xl md:text-5xl font-bold text-center text-gray-700">
+            Get In <span className="text-orange-400">Touch</span>
           </h1>
 
-          <p className="text-slate-400 text-center max-w-md text-sm leading-relaxed">
+          <p className="text-gray-500 text-center max-w-md text-sm leading-relaxed">
             Open to new projects, creative ideas, or opportunities. Drop a
             message and I&apos;ll get back to you.
           </p>
@@ -186,13 +159,9 @@ const Contact = () => {
           {/* Contact Info */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col gap-3 p-6 rounded-2xl"
-            style={{
-              background: "rgba(13,31,56,0.8)",
-              border: "1px solid rgba(59,130,246,0.12)",
-            }}
+            className="flex flex-col gap-3 p-6 rounded-2xl bg-white border border-gray-200 shadow-sm"
           >
-            <h2 className="text-lg font-semibold text-slate-200 mb-2">
+            <h2 className="text-lg font-semibold text-gray-700 mb-2">
               Contact Info
             </h2>
 
@@ -203,36 +172,22 @@ const Contact = () => {
               return (
                 <div
                   key={item.copyKey}
-                  className="flex items-center justify-between gap-3 py-3 px-4 rounded-xl"
-                  style={{
-                    background: "rgba(5,13,26,0.5)",
-                    border: "1px solid rgba(59,130,246,0.1)",
-                  }}
+                  className="flex items-center justify-between gap-3 py-3 px-4 rounded-xl bg-gray-50 border border-gray-100"
                 >
                   <div className="flex items-center gap-3 min-w-0">
                     <div
-                      className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
-                      style={{
-                        background: `${item.color}15`,
-                        border: `1px solid ${item.color}25`,
-                      }}
+                      className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 border ${accentIconClasses[item.accent]}`}
                     >
-                      <Icon size={14} style={{ color: item.color }} />
+                      <Icon size={14} />
                     </div>
 
                     <div className="min-w-0">
-                      <p className="text-[11px] text-slate-500">
-                        {item.label}
-                      </p>
+                      <p className="text-[11px] text-gray-400">{item.label}</p>
                       <a
                         href={item.href}
-                        target={
-                          item.href.startsWith("http")
-                            ? "_blank"
-                            : undefined
-                        }
+                        target={item.href.startsWith("http") ? "_blank" : undefined}
                         rel="noopener noreferrer"
-                        className="text-[13px] text-slate-300 hover:text-white block truncate"
+                        className="text-[13px] text-gray-700 hover:text-gray-800 block truncate"
                       >
                         {item.value}
                       </a>
@@ -240,24 +195,12 @@ const Contact = () => {
                   </div>
 
                   <button
-                    onClick={() =>
-                      handleCopy(item.value, item.copyKey)
-                    }
-                    className="w-7 h-7 flex items-center justify-center rounded-lg"
-                    style={{
-                      background: isCopied
-                        ? "#22c55e15"
-                        : "transparent",
-                      color: isCopied
-                        ? "#22c55e"
-                        : "rgba(148,163,184,0.5)",
-                    }}
+                    onClick={() => handleCopy(item.value, item.copyKey)}
+                    className={`w-7 h-7 flex items-center justify-center rounded-lg transition-colors ${
+                      isCopied ? "bg-lime-100 text-lime-700" : "text-gray-400 hover:bg-gray-100"
+                    }`}
                   >
-                    {isCopied ? (
-                      <FaCheck size={11} />
-                    ) : (
-                      <FaRegCopy size={11} />
-                    )}
+                    {isCopied ? <FaCheck size={11} /> : <FaRegCopy size={11} />}
                   </button>
                 </div>
               );
@@ -268,13 +211,9 @@ const Contact = () => {
           <motion.form
             variants={itemVariants}
             onSubmit={handleSubmit}
-            className="flex flex-col gap-4 p-6 rounded-2xl"
-            style={{
-              background: "rgba(13,31,56,0.8)",
-              border: "1px solid rgba(59,130,246,0.12)",
-            }}
+            className="flex flex-col gap-4 p-6 rounded-2xl bg-white border border-gray-200 shadow-sm"
           >
-            <h2 className="text-lg font-semibold text-slate-200 mb-2">
+            <h2 className="text-lg font-semibold text-gray-700 mb-2">
               Send a Message
             </h2>
 
@@ -285,7 +224,7 @@ const Contact = () => {
               required
               value={form.name}
               onChange={handleChange}
-              style={inputStyle}
+              className={inputClass}
             />
 
             <input
@@ -295,7 +234,7 @@ const Contact = () => {
               required
               value={form.email}
               onChange={handleChange}
-              style={inputStyle}
+              className={inputClass}
             />
 
             <textarea
@@ -305,19 +244,13 @@ const Contact = () => {
               required
               value={form.message}
               onChange={handleChange}
-              style={{ ...inputStyle, resize: "none" }}
+              className={`${inputClass} resize-none`}
             />
 
             <button
               type="submit"
               disabled={sending}
-              className="py-3 rounded-xl text-sm font-semibold mt-2 flex items-center justify-center gap-2"
-              style={{
-                background:
-                  "linear-gradient(135deg, #2563eb, #0891b2)",
-                color: "#fff",
-                opacity: sending ? 0.7 : 1,
-              }}
+              className="py-3 rounded-xl text-sm font-semibold mt-2 flex items-center justify-center gap-2 bg-orange-400 hover:bg-orange-300 text-white transition-colors disabled:opacity-70"
             >
               {sending ? "Sending..." : "Send Message"}
             </button>
