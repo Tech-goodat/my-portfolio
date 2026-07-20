@@ -110,7 +110,7 @@ const Home = () => {
           className="flex flex-col gap-4 w-full mt-2"
         >
           <a
-            href="/resume.pdf"
+            href="/Felix's Resume.pdf"
             download
             className="flex items-center justify-center gap-2 py-3 px-6 rounded-xl text-sm font-semibold w-full max-w-xs bg-orange-400 hover:bg-orange-300 text-white transition-colors shadow-sm hover:shadow-md"
           >
