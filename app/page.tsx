@@ -358,7 +358,7 @@ const Hero = () => {
 
             <div className="relative w-72 h-80 sm:w-80 sm:h-96 rounded-[2rem] overflow-hidden bg-slate-100 shadow-2xl">
               <Image
-                src="/pic.jpg"
+                src="/dp.jpg"
                 alt="Felix Kiprotich"
                 fill
                 priority
