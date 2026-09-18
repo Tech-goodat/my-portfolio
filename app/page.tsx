@@ -758,7 +758,7 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className=" transition-transform p-2 rounded-4xl duration-700 group-hover:scale-105"
+                  className=" transition-transform p-2 rounded-t-4xl duration-700 group-hover:scale-105"
                 />
 
                 <div className="absolute inset-0  opacity-60" />
