@@ -194,13 +194,6 @@ const Navbar = () => {
           <FaArrowRight size={10} />
         </a>
 
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90"
-          style={{ backgroundColor: blue }}
-        >
-          {open ? "Close" : "Menu"}
-        </button>
       </div>
 
       <AnimatePresence>
