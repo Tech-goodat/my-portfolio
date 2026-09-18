@@ -1,22 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Alatsi } from "next/font/google";
+// @ts-expect-error Next.js loads this global stylesheet at runtime.
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const alatsi = Alatsi({
+  variable: "--font-alatsi",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
-  title: "Felix's Portfolio",
-  description: "Welcome to my portfolio! I'm Felix Kiprotich, a seasoned Software and AI Engineer. Explore my projects, skills, and experience in building intelligent, user-focused applications.",
+  title: "Felix Kiprotich — Software Engineer",
+  description:
+    "Software engineer building intelligent applications, strong backend systems, and real-time products.",
 };
 
 export default function RootLayout({
@@ -26,14 +22,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Navbar />
+      <body className={`${alatsi.variable} antialiased`}>
         {children}
-        <Footer />
-        
-        
       </body>
     </html>
   );
