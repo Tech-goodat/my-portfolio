@@ -686,18 +686,18 @@ const projects = [
     type: "Data & Intelligent Monitoring",
     description:
       "Real-time water telemetry platform exploring meter monitoring, anomaly detection and intelligent recommendations.",
-    image: "/majismart.png",
+    image: "/maji.png",
     github: "https://github.com/Tech-goodat/majismart",
-    live: "https://majismart-seven.vercel.app/",
-    tags: ["Next.js", "Django", "MQTT", "Telemetry"],
+    live: "https://majismart-jlut.vercel.app/",
+    tags: ["Next.js", "Django", "MQTT", "Telemetry", "WebSockets", "Redis"],
     featured: true,
   },
   {
-    title: "FanANa",
+    title: "FleetFlow",
     type: "Fleet Management",
     description:
       "A business-focused fleet system for tracking vehicles, trips, fuel, income, expenses and profitability.",
-    image: "/fanana.png",
+    image: "/fleetflow.png",
     github: "#",
     live: "#",
     tags: ["Next.js", "Django", "PWA", "Finance"],
@@ -758,10 +758,10 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className=" transition-transform p-2 rounded-4xl duration-700 group-hover:scale-105"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60" />
+                <div className="absolute inset-0  opacity-60" />
 
                 <span className="absolute top-5 left-5 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur text-[10px] font-bold text-slate-700">
                   {project.type}
