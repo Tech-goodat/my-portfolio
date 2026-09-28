@@ -687,19 +687,29 @@ const projects = [
     description:
       "Real-time water telemetry platform exploring meter monitoring, anomaly detection and intelligent recommendations.",
     image: "/maji.png",
-    github: "https://github.com/Tech-goodat/majismart",
+    github: "https://github.com/Tech-goodat/maji_IOT_backend",
     live: "https://majismart-jlut.vercel.app/",
     tags: ["Next.js", "Django", "MQTT", "Telemetry", "WebSockets", "Redis"],
     featured: true,
+  },
+  {
+    title: "UsafiPlus",
+    type: "Waste Management",
+    description:
+      "A corporate website for a waste management company, showcasing services, projects and contact information.",
+    image: "/usafi.png",
+    live: "https://usafi-tan.vercel.app/",
+    tags: ["Next.js", "Tailwind CSS", "Shadcn UI"],
+    featured: false,
   },
   {
     title: "FleetFlow",
     type: "Fleet Management",
     description:
       "A business-focused fleet system for tracking vehicles, trips, fuel, income, expenses and profitability.",
-    image: "/fleetflow.png",
-    github: "#",
-    live: "#",
+    image: "/fleet.png",
+    github: "https://github.com/Tech-goodat/fleet_flow",
+    live: "https://fleetflow-chi-seven.vercel.app/",
     tags: ["Next.js", "Django", "PWA", "Finance"],
     featured: true,
   },
@@ -709,22 +719,12 @@ const projects = [
     description:
       "Community-driven marketplace connecting local businesses with nearby residents.",
     image: "/nextdoor.png",
-    github: "https://github.com/Tech-goodat/nextdoor_client",
+    github: "https://github.com/Tech-goodat/NextDoor_server",
     live: "https://nextdoor-client.vercel.app/",
     tags: ["Next.js", "DRF", "PostgreSQL"],
     featured: false,
   },
-  {
-    title: "Lifepulse",
-    type: "Health Dashboard",
-    description:
-      "A dashboard for tracking fitness and nutrition data through a structured web application.",
-    image: "/lifepulse.png",
-    github: "https://github.com/Tech-goodat/lifepulse_client",
-    live: "https://lifepulse-client.vercel.app/",
-    tags: ["Next.js", "Flask", "SQLAlchemy"],
-    featured: false,
-  },
+  
 ];
 
 const Projects = () => {
