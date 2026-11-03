@@ -25,6 +25,14 @@ import {
   FaChartLine,
   FaLightbulb,
   FaLayerGroup,
+  FaBuilding,
+  FaMapMarkerAlt,
+  FaPlug,
+  FaRocket,
+  FaUsers,
+  FaShieldAlt,
+  FaBars,
+  FaTimes,
 } from "react-icons/fa";
 import {
   SiNextdotjs,
@@ -49,7 +57,22 @@ const LINKEDIN =
   "https://www.linkedin.com/in/felix-kiprotich-b87a11228/";
 const GITHUB = "https://github.com/Tech-goodat/";
 
+/* =========================================================
+   CURRENT ROLE — edit these to match your offer letter
+========================================================= */
+
+const CURRENT_ROLE = {
+  title: "Software Developer",
+  company: "Craft Silicon",
+  companyUrl: "https://craftsilicon.com",
+  start: "2026", // e.g. "Jan 2026"
+  location: "Nairobi, Kenya",
+  summary:
+    "I develop, enhance and support software applications used by clients across different locations, from writing and testing new features to integrating systems and keeping deployed applications running smoothly.",
+};
+
 const NAV_LINKS = [
+  { label: "Experience", href: "#experience" },
   { label: "Work", href: "#projects" },
   { label: "Capabilities", href: "#capabilities" },
   { label: "Journey", href: "#journey" },
@@ -168,7 +191,7 @@ const Navbar = () => {
             </p>
 
             <p className="text-[10px] text-slate-400 uppercase tracking-wider">
-              Software Engineer
+              {CURRENT_ROLE.title} · {CURRENT_ROLE.company}
             </p>
           </div>
         </a>
@@ -194,6 +217,15 @@ const Navbar = () => {
           <FaArrowRight size={10} />
         </a>
 
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          className="md:hidden w-10 h-10 rounded-xl flex items-center justify-center text-slate-700 hover:bg-slate-100 transition-colors"
+        >
+          {open ? <FaTimes size={16} /> : <FaBars size={16} />}
+        </button>
       </div>
 
       <AnimatePresence>
@@ -240,9 +272,10 @@ const Hero = () => {
         className="relative max-w-7xl mx-auto px-6 py-20 md:py-28 grid lg:grid-cols-[1.2fr_.8fr] gap-16 items-center"
       >
         <div>
-          <motion.div
+          <motion.a
             variants={fadeUp}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-200 bg-white shadow-sm mb-7"
+            href="#experience"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-200 bg-white shadow-sm mb-7 hover:border-slate-300 transition-colors"
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
@@ -250,9 +283,12 @@ const Hero = () => {
             </span>
 
             <span className="text-[11px] font-semibold text-slate-500">
-              Available for opportunities
+              {CURRENT_ROLE.title} at{" "}
+              <span className="text-slate-800">
+                {CURRENT_ROLE.company}
+              </span>
             </span>
-          </motion.div>
+          </motion.a>
 
           <motion.p
             variants={fadeUp}
@@ -280,11 +316,13 @@ const Hero = () => {
             variants={fadeUp}
             className="mt-7 max-w-xl text-lg leading-relaxed text-slate-500"
           >
-            I&apos;m Felix, a software engineer focused on building
-            intelligent applications, reliable backend systems and
-            data-driven products. I&apos;m particularly interested in
-            turning raw data into meaningful insights, useful actions
-            and smarter software.
+            I&apos;m Felix, a {CURRENT_ROLE.title.toLowerCase()} at{" "}
+            {CURRENT_ROLE.company}, where I build, integrate and
+            support software used by clients across different
+            locations. Beyond the day job, I build intelligent
+            applications and data-driven products, turning raw data
+            into meaningful insights, useful actions and smarter
+            software.
           </motion.p>
 
           <motion.div
@@ -317,6 +355,7 @@ const Hero = () => {
               href={GITHUB}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub"
               className="text-slate-400 hover:text-slate-900 transition"
             >
               <FaGithub size={20} />
@@ -326,6 +365,7 @@ const Hero = () => {
               href={LINKEDIN}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn"
               className="text-slate-400 hover:text-blue-600 transition"
             >
               <FaLinkedin size={20} />
@@ -333,6 +373,7 @@ const Hero = () => {
 
             <a
               href={`mailto:${EMAIL_TO}`}
+              aria-label="Email"
               className="text-slate-400 hover:text-slate-900 transition"
             >
               <FaEnvelope size={19} />
@@ -382,7 +423,7 @@ const Hero = () => {
                   className="w-10 h-10 rounded-xl flex items-center justify-center text-white"
                   style={{ backgroundColor: blue }}
                 >
-                  <FaCode size={15} />
+                  <FaBuilding size={15} />
                 </div>
 
                 <div>
@@ -391,7 +432,7 @@ const Hero = () => {
                   </p>
 
                   <p className="text-sm font-bold text-slate-800">
-                    Building intelligent systems
+                    {CURRENT_ROLE.title} @ {CURRENT_ROLE.company}
                   </p>
                 </div>
               </div>
@@ -425,6 +466,8 @@ const Hero = () => {
           <span>Python</span>
           <span>Django REST Framework</span>
           <span>PostgreSQL</span>
+          <span>SQL</span>
+          <span>API Integrations</span>
           <span>Data Systems</span>
           <span>AI Integrations</span>
         </div>
@@ -434,7 +477,168 @@ const Hero = () => {
 };
 
 /* =========================================================
-   CURRENTLY BUILDING
+   EXPERIENCE (CURRENT ROLE)
+========================================================= */
+
+const roleAreas = [
+  {
+    icon: FaCode,
+    title: "Build & enhance",
+    text: "Develop, modify and maintain applications and modules to technical specifications, and ship new features, enhancements and client customizations.",
+  },
+  {
+    icon: FaCheckCircle,
+    title: "Quality & testing",
+    text: "Unit, integration and functional testing of the work I ship, plus code reviews with senior developers and close work with QA for clean releases.",
+  },
+  {
+    icon: FaPlug,
+    title: "Data & integrations",
+    text: "Work with databases, queries and stored procedures, and build and maintain APIs connecting company products, third-party systems and client environments.",
+  },
+  {
+    icon: FaRocket,
+    title: "Deployment & production support",
+    text: "Support on-site and remote installations, configurations and implementations, and investigate production incidents to restore service within agreed timelines.",
+  },
+  {
+    icon: FaUsers,
+    title: "Clients & stakeholders",
+    text: "Translate requirements from business analysts, project managers and clients into working software, and keep everyone updated as issues are resolved.",
+  },
+  {
+    icon: FaShieldAlt,
+    title: "Engineering discipline",
+    text: "Track work in JIRA against SLAs, follow version-control and secure-coding practices, and document changes, releases and known issues.",
+  },
+];
+
+const roleTools = [
+  "JIRA",
+  "Git",
+  "SQL",
+  "Stored Procedures",
+  "REST APIs",
+  "Unit Testing",
+  "Code Review",
+  "Production Support",
+];
+
+const Experience = () => {
+  return (
+    <section
+      id="experience"
+      className="bg-white px-6 py-24 scroll-mt-16"
+    >
+      <motion.div
+        variants={stagger}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        className="max-w-7xl mx-auto"
+      >
+        <SectionLabel>Experience</SectionLabel>
+
+        <SectionTitle description="Where I spend my days: building and supporting software that real clients depend on.">
+          Where I work
+        </SectionTitle>
+
+        <div className="grid lg:grid-cols-[.85fr_1.15fr] gap-7">
+          <motion.div
+            variants={fadeUp}
+            className="rounded-3xl p-8 md:p-10 text-white flex flex-col justify-between"
+            style={{ backgroundColor: blue }}
+          >
+            <div>
+              <div className="flex items-center justify-between">
+                <div className="w-12 h-12 rounded-2xl bg-white/15 flex items-center justify-center">
+                  <FaBuilding />
+                </div>
+
+                <span className="px-3 py-1 rounded-full bg-white/15 text-white text-[10px] font-bold uppercase tracking-wider">
+                  Current role
+                </span>
+              </div>
+
+              <p className="text-xs uppercase tracking-[0.2em] text-white/70 mt-10">
+                {CURRENT_ROLE.start} — Present
+              </p>
+
+              <h3 className="text-3xl font-black mt-2">
+                {CURRENT_ROLE.title}
+              </h3>
+
+              <a
+                href={CURRENT_ROLE.companyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-2 text-lg font-bold text-white/90 hover:text-white"
+              >
+                {CURRENT_ROLE.company}
+                <FaExternalLinkAlt size={10} />
+              </a>
+
+              <p className="flex items-center gap-2 text-sm text-white/70 mt-3">
+                <FaMapMarkerAlt size={12} />
+                {CURRENT_ROLE.location}
+              </p>
+
+              <p className="text-white/80 mt-6 leading-relaxed">
+                {CURRENT_ROLE.summary}
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-2 mt-10">
+              {roleTools.map((tag) => (
+                <span
+                  key={tag}
+                  className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-[10px] text-white/85"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 gap-5">
+            {roleAreas.map((area) => {
+              const Icon = area.icon;
+
+              return (
+                <motion.div
+                  key={area.title}
+                  variants={fadeUp}
+                  className="p-6 rounded-2xl border border-slate-200 bg-white"
+                >
+                  <div
+                    className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
+                    style={{
+                      backgroundColor: blueLight,
+                      color: blue,
+                    }}
+                  >
+                    <Icon size={15} />
+                  </div>
+
+                  <h4 className="font-bold text-slate-900">
+                    {area.title}
+                  </h4>
+
+                  <p className="text-sm text-slate-500 leading-relaxed mt-2">
+                    {area.text}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </motion.div>
+    </section>
+  );
+};
+
+/* =========================================================
+   CURRENTLY BUILDING (SIDE PROJECTS)
 ========================================================= */
 
 const CurrentWork = () => {
@@ -447,10 +651,10 @@ const CurrentWork = () => {
         viewport={{ once: true, amount: 0.15 }}
         className="max-w-7xl mx-auto"
       >
-        <SectionLabel>Right now</SectionLabel>
+        <SectionLabel>Beyond the day job</SectionLabel>
 
-        <SectionTitle description="The projects currently shaping my engineering direction.">
-          What I&apos;m building lately
+        <SectionTitle description="Independent and client projects shaping my engineering direction.">
+          What I&apos;m building on the side
         </SectionTitle>
 
         <div className="grid md:grid-cols-2 gap-6">
@@ -574,17 +778,17 @@ const capabilities = [
   },
   {
     icon: FaServer,
-    title: "Backend Systems",
+    title: "Backend Systems & APIs",
     description:
-      "APIs and application logic designed around clean architecture, security and maintainability.",
-    tags: ["Python", "Django", "DRF"],
+      "APIs, integrations and application logic designed around clean architecture, security and maintainability.",
+    tags: ["Python", "Django", "DRF", "Integrations"],
   },
   {
     icon: FaDatabase,
     title: "Data Systems",
     description:
-      "Designing data models, relational databases and APIs that support real products and meaningful analysis.",
-    tags: ["PostgreSQL", "SQLite", "REST"],
+      "Data models, queries, stored procedures and relational databases that support real products and meaningful analysis.",
+    tags: ["PostgreSQL", "SQL", "Stored Procedures"],
   },
   {
     icon: FaRobot,
@@ -602,10 +806,10 @@ const capabilities = [
   },
   {
     icon: FaCloud,
-    title: "Deployment",
+    title: "Deployment & Production Support",
     description:
-      "Taking applications from local development to deployed, accessible production systems.",
-    tags: ["Vercel", "Render", "Cloud"],
+      "Taking applications from development to production, from installation and configuration to supporting them once they're live.",
+    tags: ["Deployment", "Testing", "Incident Support"],
   },
 ];
 
@@ -680,7 +884,18 @@ const Capabilities = () => {
    PROJECTS
 ========================================================= */
 
-const projects = [
+type Project = {
+  title: string;
+  type: string;
+  description: string;
+  image: string;
+  github?: string;
+  live?: string;
+  tags: string[];
+  featured: boolean;
+};
+
+const projects: Project[] = [
   {
     title: "MajiSmart",
     type: "Data & Intelligent Monitoring",
@@ -724,7 +939,6 @@ const projects = [
     tags: ["Next.js", "DRF", "PostgreSQL"],
     featured: false,
   },
-  
 ];
 
 const Projects = () => {
@@ -793,7 +1007,7 @@ const Projects = () => {
                 </div>
 
                 <div className="flex items-center gap-3 mt-7 pt-5 border-t border-slate-100">
-                  {project.github !== "#" && (
+                  {project.github && project.github !== "#" && (
                     <a
                       href={project.github}
                       target="_blank"
@@ -806,7 +1020,7 @@ const Projects = () => {
                     </a>
                   )}
 
-                  {project.live !== "#" && (
+                  {project.live && project.live !== "#" && (
                     <a
                       href={project.live}
                       target="_blank"
@@ -864,8 +1078,8 @@ const EngineeringApproach = () => {
     },
     {
       number: "03",
-      title: "Build & integrate",
-      text: "I turn the architecture into working software and connect the pieces into a usable product.",
+      title: "Build, test & integrate",
+      text: "I turn the architecture into tested, working software and connect the pieces into a usable product.",
       icon: FaTerminal,
     },
     {
@@ -965,7 +1179,7 @@ const Journey = () => {
       >
         <SectionLabel>My journey</SectionLabel>
 
-        <SectionTitle description="The direction has become clearer with every project: build useful software, understand systems deeply and keep moving toward intelligent applications.">
+        <SectionTitle description="The direction has become clearer with every step: build useful software, understand systems deeply and keep moving toward intelligent applications.">
           From web development to systems thinking
         </SectionTitle>
 
@@ -1037,6 +1251,33 @@ const Journey = () => {
                 className="text-xs font-bold uppercase tracking-widest"
                 style={{ color: blue }}
               >
+                Professional engineering · {CURRENT_ROLE.start} — Present
+              </p>
+
+              <h3 className="text-xl font-black mt-2 text-slate-900">
+                {CURRENT_ROLE.title} at {CURRENT_ROLE.company}
+              </h3>
+
+              <p className="text-sm text-slate-500 leading-relaxed mt-3">
+                Working on software that clients rely on every day:
+                shipping features and fixes through code review and
+                testing, integrating with third-party and client
+                systems, supporting deployments and production
+                incidents, and delivering against SLAs alongside QA,
+                DevOps, business analysts and implementation teams.
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={fadeUp}
+              className="relative pl-8 md:pl-12"
+            >
+              <span
+                className="absolute -left-[5px] top-1 w-2.5 h-2.5 rounded-full"
+                style={{ backgroundColor: cyan }}
+              />
+
+              <p className="text-xs font-bold uppercase tracking-widest text-emerald-600">
                 Current direction
               </p>
 
@@ -1045,7 +1286,7 @@ const Journey = () => {
               </h3>
 
               <p className="text-sm text-slate-500 leading-relaxed mt-3">
-                My recent work with MajiSmart is taking this further:
+                My work on MajiSmart is taking this further:
                 collecting telemetry, understanding patterns,
                 detecting anomalies and exploring how AI can turn
                 raw data into meaningful insights, decisions and
@@ -1088,8 +1329,11 @@ const About = () => {
 
           <div className="space-y-4 mt-6 text-slate-500 leading-relaxed">
             <p>
-              I&apos;m a software engineer who started from full-stack
-              web development and is increasingly moving deeper into
+              I&apos;m a {CURRENT_ROLE.title.toLowerCase()} at{" "}
+              {CURRENT_ROLE.company}, where my day-to-day spans feature
+              development, bug fixing, integrations, database work and
+              supporting clients in production. I started from
+              full-stack web development and keep moving deeper into
               backend systems, data, AI integrations and intelligent
               applications.
             </p>
@@ -1205,9 +1449,9 @@ const CTA = () => {
             </h2>
 
             <p className="text-white/75 max-w-xl mt-4 leading-relaxed">
-              Whether it&apos;s a product, backend system, AI integration
-              or something you&apos;re still figuring out, I&apos;d love to
-              hear what you&apos;re working on.
+              Whether it&apos;s a product idea, a backend system, an AI
+              integration or something you&apos;re still figuring out,
+              I&apos;d love to hear what you&apos;re working on.
             </p>
           </div>
 
@@ -1283,8 +1527,8 @@ const Contact = () => {
       >
         <SectionLabel>Contact</SectionLabel>
 
-        <SectionTitle description="Have a project, role or idea you'd like to discuss? Send me a message.">
-          Let&apos;s work together
+        <SectionTitle description="Have a project, idea or technical problem you'd like to discuss? Send me a message.">
+          Let&apos;s connect
         </SectionTitle>
 
         <div className="grid lg:grid-cols-2 gap-7">
@@ -1300,6 +1544,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 placeholder="Your name"
+                aria-label="Your name"
                 className={input}
               />
 
@@ -1310,6 +1555,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 placeholder="Email address"
+                aria-label="Email address"
                 className={input}
               />
             </div>
@@ -1321,6 +1567,7 @@ const Contact = () => {
               required
               rows={7}
               placeholder="Tell me about your project..."
+              aria-label="Message"
               className={`${input} mt-4 resize-none`}
             />
 
@@ -1350,8 +1597,8 @@ const Contact = () => {
               </h3>
 
               <p className="text-white/75 leading-relaxed mt-4 max-w-md">
-                I&apos;m open to software engineering opportunities,
-                freelance projects, collaborations and interesting
+                I&apos;m always happy to connect with fellow engineers,
+                talk through collaborations and dig into interesting
                 technical problems.
               </p>
             </div>
@@ -1366,7 +1613,7 @@ const Contact = () => {
               </a>
 
               <a
-                href={`https://wa.me/${WHATSAPP}`}
+                href={`https://wa.me/${WHATSAPP.replace(/\D/g, "")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 text-sm text-white/80 hover:text-white"
@@ -1419,6 +1666,7 @@ const Footer = () => {
             href={GITHUB}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="GitHub"
             className="text-slate-400 hover:text-slate-900"
           >
             <FaGithub size={16} />
@@ -1428,6 +1676,7 @@ const Footer = () => {
             href={LINKEDIN}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="LinkedIn"
             className="text-slate-400 hover:text-blue-600"
           >
             <FaLinkedin size={16} />
@@ -1435,15 +1684,17 @@ const Footer = () => {
 
           <a
             href={`mailto:${EMAIL_TO}`}
+            aria-label="Email"
             className="text-slate-400 hover:text-slate-900"
           >
             <FaEnvelope size={16} />
           </a>
 
           <a
-            href={`https://wa.me/${WHATSAPP}`}
+            href={`https://wa.me/${WHATSAPP.replace(/\D/g, "")}`}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="WhatsApp"
             className="text-slate-400 hover:text-emerald-600"
           >
             <FaWhatsapp size={16} />
@@ -1451,6 +1702,7 @@ const Footer = () => {
 
           <a
             href="#hero"
+            aria-label="Back to top"
             className="ml-3 w-9 h-9 rounded-full flex items-center justify-center text-white transition-opacity hover:opacity-90"
             style={{ backgroundColor: blue }}
           >
@@ -1473,6 +1725,7 @@ const Home = () => {
 
       <main>
         <Hero />
+        <Experience />
         <CurrentWork />
         <Capabilities />
         <Projects />
